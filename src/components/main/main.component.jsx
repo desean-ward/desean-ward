@@ -7,20 +7,20 @@ import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
 const Main = () => {
   return (
     <div className='w-full h-screen text-center'>
-        <div className='max-w-[1240px] w-full mt-40 mx-auto p-2 flex justify-center items-center'>
+        <div className='max-w-[1240px] w-full mt-40 mx-auto p-2 flex justify-center items-center flex-wrap'>
             <div>
                 <div className='w-full flex flex-col justify-center align-center'>
                     <Image
                         src='/../public/assets/portfolio-pic.jpg'
-                        width='400'
-                        height='400'
-                        className='rounded-full pb-8'
+                        width='250'
+                        height='250'
+                        className='rounded-full pb-8 md:w-[300px] sm:w-[250px] xs:w-[150px]'
                         alt='/'
                     />
                 </div>
             </div>
 
-            <div className='w-[50%]'>
+            <div className='lg:w-[50%] md:w-[80%] sm:w-[80%]'>
                 <p className='uppercase text-sm tracking-widest text-gray-600'>Let&#039;s build solutions!</p>
 
                 <h1 className='py-4 text-gray-700'>Hi, I&#039;m <span className='text-[tan]'> De Sean</span></h1>
