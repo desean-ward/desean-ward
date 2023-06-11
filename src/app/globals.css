@@ -10,7 +10,7 @@
 
 @layer base {
   body {
-    @apply bg-[#ecf0f3] text-[#1f2937] tracking-wide
+    @apply bg-[#ecf0f3] text-[#1f2937] tracking-wide scroll-smooth
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -30,9 +30,18 @@
   }
 
   button {
-    @apply cursor-pointer shadow-xl shadow-gray-400 rounded-xl uppercase bg-gradient-to-r from-[#5651e5] to-[#7092ff] text-white
+    @apply cursor-pointer shadow-xl shadow-gray-400 rounded-xl uppercase bg-[tan] text-white
+  }
+
+  .section-name {
+    @apply uppercase text-xl tracking-widest text-[tan] text-shadow-sm shadow-gray-900
+  }
+
+  .section-title {
+    @apply py-4
   }
 }
+
 
 @media (prefers-color-scheme: dark) {
   :root {

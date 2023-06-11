@@ -2,14 +2,13 @@ import React, { useState } from 'react'
 
 // NextJS Components
 import Image from 'next/image'
-import Link from 'next/link'
 
 // Styled Components
-import { NavContainer } from './navbar.styles'
-
 import { AiOutlineMenu, AiOutlineClose, AiOutlineMail } from 'react-icons/ai'
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
 import { BsFillPersonLinesFill } from 'react-icons/bs'
+import { CustomIconNav } from '../customs/custom-icon.component'
+import CustomLink from '../customs/custom-link.component'
 
 const Navbar = () => {
 	const [nav, setNav] = useState(false)
@@ -21,38 +20,44 @@ const Navbar = () => {
 	return (
 		<div className='fixed w-full h-20 shadow-xl'>
 			<div className='flex items-center justify-between w-full h-full px-4 2xl:px-16'>
-				<h1 className='text-gray-700'>D.W.</h1>
+				{/**
+				 * ********** LOGO **********
+				 */}
+				<h2 className='text-gray-700'>D.W.</h2>
 
-				<ul className='hidden md:flex'>
-					<Link href='/'>
-						<li className='ml-10 text-sm uppercase hover:border-b'>
+				{/**
+				 * ********** NAV **********
+				 */}
+				<ul className='hidden md:flex text-sm uppercase'>
+					<CustomLink href='http://www.google.com'>
+						<li className='ml-10'>
 							Home
 						</li>
-					</Link>
+					</CustomLink>
 
-					<Link href='/'>
-						<li className='ml-10 text-sm uppercase hover:border-b'>
+					<CustomLink href='/'>
+						<li className='ml-10'>
 							About
 						</li>
-					</Link>
+					</CustomLink>
 
-					<Link href='/'>
-						<li className='ml-10 text-sm uppercase hover:border-b'>
+					<CustomLink href='/'>
+						<li className='ml-10'>
 							Skills
 						</li>
-					</Link>
+					</CustomLink>
 
-					<Link href='/'>
-						<li className='ml-10 text-sm uppercase hover:border-b'>
+					<CustomLink href='/'>
+						<li className='ml-10'>
 							Projects
 						</li>
-					</Link>
+					</CustomLink>
 
-					<Link href='/'>
-						<li className='ml-10 text-sm uppercase hover:border-b'>
+					<CustomLink href='/'>
+						<li className='ml-10'>
 							Contact Me
 						</li>
-					</Link>
+					</CustomLink>
 				</ul>
 
 				<div
@@ -62,18 +67,30 @@ const Navbar = () => {
 				</div>
 			</div>
 
+
+			{/**
+			 * **** Mobile Navigation ****
+			 */}
 			<div
 				className={
 					nav
 						? 'md:hidden fixed left-0 top-0 w-full h-screen bg-black/70'
 						: ' '
 				}>
+				{/**
+				 * **** Mobile Navigation Content ****
+				 */}
 				<div
 					className={
 						nav
 							? 'fixed left-0 top-0 w-[75%] sm:w-[60%] md:w-[45%] h-screen bg-[#ecf0f3] p-8 ease-in duration-500'
 							: 'fixed left-[-100%] top-0 p-5 ease-in duration-500'
 					}>
+
+
+					{/**
+					 * **** Profile Picture ****
+					 */}
 					<div className='flex w-full items-center justify-between'>
 						<Image
 							src='/../public/assets/portfolio-pic.jpg'
@@ -83,11 +100,17 @@ const Navbar = () => {
 							alt='/'
 						/>
 
-						<div
-							onClick={handleNav}
-							className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer'>
+						<h3 className='text-gray-700 relative ml-[-8em] pl-4'>De Sean Ward</h3>
+
+
+						{/**
+						 * **** Close Icon ****
+						 */}
+						<CustomIconNav>
+						<span onClick={handleNav}>
 							<AiOutlineClose />
-						</div>
+						</span>
+						</CustomIconNav>
 					</div>
 
 					<div className='border-b border-gray-300 my-4'>
@@ -96,27 +119,31 @@ const Navbar = () => {
 						</p>
 					</div>
 
+
+					{/**
+					 * **** Navigation Links *****
+					 */}
 					<div className='py-4 flex flex-col'>
-						<ul className='uppercase'>
-							<Link href='/'>
-								<li className='py-4 text-sm'>Home</li>
-							</Link>
+						<ul className='uppercase text-sm'>
+							<CustomLink href='http://www.google.com'>
+								<li>Home</li>
+							</CustomLink>
 
-							<Link href='/'>
-								<li className='py-4 text-sm'>About</li>
-							</Link>
+							<CustomLink href='/'>
+								<li>About</li>
+							</CustomLink>
 
-							<Link href='/'>
-								<li className='py-4 text-sm'>Skills</li>
-							</Link>
+							<CustomLink href='/'>
+								<li>Skills</li>
+							</CustomLink>
 
-							<Link href='/'>
-								<li className='py-4 text-sm'>Projects</li>
-							</Link>
+							<CustomLink href='/'>
+								<li>Projects</li>
+							</CustomLink>
 
-							<Link href='/'>
-								<li className='py-4 text-sm'>Contact </li>
-							</Link>
+							<CustomLink href='/'>
+								<li>Contact</li>
+							</CustomLink>
 						</ul>
 
 						<div className='pt-40'>
@@ -124,22 +151,26 @@ const Navbar = () => {
 								Let&#039;s Connect
 							</p>
 
+
+							{/**
+							 * **** Social Media Icons ****
+							 */}
 							<div className='flex items-center justify-between my-4 w-full sm:w-[80%]'>
-								<div className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300'>
+								<CustomIconNav>
 									<FaLinkedinIn />
-								</div>
+								</CustomIconNav>
 
-								<div className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300'>
-									<FaGithub  className='hover:bg-[tan]'/>
-								</div>
+								<CustomIconNav>
+									<FaGithub />
+								</CustomIconNav>
 
-								<div className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300'>
+								<CustomIconNav>
 									<AiOutlineMail />
-								</div>
+								</CustomIconNav>
 
-								<div className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300'>
+								<CustomIconNav>
 									<BsFillPersonLinesFill />
-								</div>
+								</CustomIconNav>
 							</div>
 						</div>
 					</div>
