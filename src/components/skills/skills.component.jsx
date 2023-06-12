@@ -3,10 +3,10 @@ import React from 'react'
 import { SkillsContainer } from './skills.styles'
 
 const Skills = () => {
-  const skills = ['react', 'nextjs', 'javascript', 'html', 'css', 'firebase', 'node', 'styled-components', 'tailwind', 'openai', 'github']
+  const skills = ['react', 'nextjs', 'javascript', 'html', 'css', 'firebase', 'node', 'styled-components', 'tailwind', 'openai', 'github', 'stripe']
   
   return (
-    <SkillsContainer className='w-full lg:h-screen p-2'>
+    <SkillsContainer id='skills' className='w-full md:h-screen p-2'>
       <div className='max-w-[1240px] mx-auto flex flex-col justify-center h-full'>
         <p className='uppercase text-xl tracking-widest text-[tan] text-shadow-sm shadow-gray-900'>Skills</p>
 

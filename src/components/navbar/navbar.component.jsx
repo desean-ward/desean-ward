@@ -1,59 +1,88 @@
-import React, { useState } from 'react'
+'use client'
+import React, { useState, useEffect } from 'react'
 
 // NextJS Components
 import Image from 'next/image'
+import { usePathname } from 'next/navigation'
 
 // Styled Components
 import { AiOutlineMenu, AiOutlineClose, AiOutlineMail } from 'react-icons/ai'
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
 import { BsFillPersonLinesFill } from 'react-icons/bs'
-import { CustomIconNav } from '../customs/custom-icon.component'
+import { CustomIcon, CustomIconNav } from '../customs/custom-icon.component'
 import CustomLink from '../customs/custom-link.component'
 
 const Navbar = () => {
-	const [nav, setNav] = useState(false)
+	const [ nav, setNav]  = useState(false)
+	const [ shadow, setShadow ] = useState(false)
+	const [ navBg, setNavBg ] = useState('#ecf0f3')
+	const [ linkColor, setLinkColor ] = useState('text-gray-700')
+	const pathname = usePathname()
+
+	useEffect(() => {
+		if(pathname === '/projects/dwfazhionz') {
+			setNavBg('transparent')
+			setLinkColor('#ecf0f3')
+		} else {
+			setNavBg('#ecf0f3')
+			setLinkColor('#1f2937')
+		}
+	}, [pathname])
 
 	const handleNav = () => {
 		setNav(!nav)
 	}
 
+	useEffect(() => {
+		const handleShadow = () => {
+			if(window.scrollY >= 90) {
+				setShadow(true)
+			} else {
+				setShadow(false)
+			}
+		} 
+		window.addEventListener('scroll', handleShadow)
+	}, [])
+
 	return (
-		<div className='fixed w-full h-20 shadow-xl'>
+		<div 
+		style={{ backgroundColor: `${navBg}` }}
+		className={shadow ? 'fixed w-full h-20 bg-[{navBg}] shadow-xl z-[100]' : 'fixed w-full h-20 z-[100]'}>
 			<div className='flex items-center justify-between w-full h-full px-4 2xl:px-16'>
 				{/**
 				 * ********** LOGO **********
 				 */}
-				<h2 className='text-gray-700'>D.W.</h2>
+				<h2 style={{ color: `${linkColor}` }}>D.W.</h2>
 
 				{/**
 				 * ********** NAV **********
 				 */}
-				<ul className='hidden md:flex text-sm uppercase'>
-					<CustomLink href='http://www.google.com'>
+				<ul style={{ color: `${linkColor}` }} className='hidden md:flex text-sm uppercase'>
+					<CustomLink href='/'>
 						<li className='ml-10'>
 							Home
 						</li>
 					</CustomLink>
 
-					<CustomLink href='/'>
+					<CustomLink href='/#about'>
 						<li className='ml-10'>
 							About
 						</li>
 					</CustomLink>
 
-					<CustomLink href='/'>
+					<CustomLink href='/#skills'>
 						<li className='ml-10'>
 							Skills
 						</li>
 					</CustomLink>
 
-					<CustomLink href='/'>
+					<CustomLink href='/#projects'>
 						<li className='ml-10'>
 							Projects
 						</li>
 					</CustomLink>
 
-					<CustomLink href='/'>
+					<CustomLink href='/#contact'>
 						<li className='ml-10'>
 							Contact Me
 						</li>
@@ -62,6 +91,7 @@ const Navbar = () => {
 
 				<div
 					onClick={handleNav}
+					style={{ color: `${linkColor}` }}
 					className='md:hidden hover:cursor-pointer'>
 					<AiOutlineMenu size={25} />
 				</div>
@@ -91,16 +121,18 @@ const Navbar = () => {
 					{/**
 					 * **** Profile Picture ****
 					 */}
-					<div className='flex w-full items-center justify-between'>
-						<Image
-							src='/../public/assets/portfolio-pic.jpg'
-							width='85'
-							height='30'
-							className='rounded-full pt-2'
-							alt='/'
-						/>
+					<div className='flex w-full items-start justify-between '>
+					 	<div className='flex-col items-center'>
+							<Image
+								src='/../public/assets/portfolio-pic.jpg'
+								width='85'
+								height='30'
+								className='rounded-full'
+								alt='/'
+							/>
 
-						<h3 className='text-gray-700 relative ml-[-8em] pl-4'>De Sean Ward</h3>
+							<h3 className='text-gray-700'>De Sean Ward</h3>
+						</div>
 
 
 						{/**
@@ -125,24 +157,24 @@ const Navbar = () => {
 					 */}
 					<div className='py-4 flex flex-col'>
 						<ul className='uppercase text-sm'>
-							<CustomLink href='http://www.google.com'>
-								<li>Home</li>
+							<CustomLink href='/'>
+								<li className='pb-4' onClick={() => setNav(false)}>Home</li>
 							</CustomLink>
 
-							<CustomLink href='/'>
-								<li>About</li>
+							<CustomLink href='/#about'>
+								<li className='pb-4' onClick={() => setNav(false)}>About</li>
 							</CustomLink>
 
-							<CustomLink href='/'>
-								<li>Skills</li>
+							<CustomLink href='/#skills'>
+								<li className='pb-4' onClick={() => setNav(false)}>Skills</li>
 							</CustomLink>
 
-							<CustomLink href='/'>
-								<li>Projects</li>
+							<CustomLink href='/#projects'>
+								<li className='pb-4' onClick={() => setNav(false)}>Projects</li>
 							</CustomLink>
 
-							<CustomLink href='/'>
-								<li>Contact</li>
+							<CustomLink href='/#contact'>
+								<li className='pb-4' onClick={() => setNav(false)}>Contact</li>
 							</CustomLink>
 						</ul>
 

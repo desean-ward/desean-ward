@@ -4,7 +4,7 @@ import { AboutContainer, AboutContent } from './about.styles'
 
 const About = () => {
   return (
-    <AboutContainer className='w-full md:h-screen p-2 flex items-center py-16'>
+    <AboutContainer id='about' className='w-full md:h-screen p-2 flex items-center py-16'>
 
         {/**
          * *** ABOUT ME CONTENT ***

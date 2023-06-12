@@ -20,6 +20,12 @@ export const StyledIcon = styled.div`
         background-color: tan;
         color: white;
     }
+
+    @media (max-width: 768px) {
+        cursor: pointer;
+        background-color: tan;
+        color: white !important;
+    }
 `
 
 export const StyledImage = styled.div`

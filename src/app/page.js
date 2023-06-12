@@ -1,6 +1,5 @@
 'use client'
 import Main from '@/components/main/main.component'
-import Navbar from '@/components/navbar/navbar.component'
 import About from '@/components/about/about.component'
 import Skills from '@/components/skills/skills.component'
 import Projects from '@/components/projects/projects.component'
@@ -13,13 +12,11 @@ import Link from 'next/link'
 export default function Home() {
 	return (
 		<main className='flex min-h-screen flex-col items-center justify-between px-2'>
-			<Navbar />
 			<Main />
 			<About />
 			<Skills />
 			<Projects />
 			<Contact />
-			
 		</main>
 	)
 }

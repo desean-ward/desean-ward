@@ -16,7 +16,7 @@ const Main = () => {
         {/**
          * ********** MAIN CONTENT **********
          */}
-        <div className='max-w-[1240px] w-full mt-40 mx-auto p-2 flex justify-center items-center flex-wrap'>
+        <div id='home' className='max-w-[1240px] w-full mt-40 mx-auto p-2 flex justify-center items-center flex-wrap'>
 
             {/**
              * ********** IMAGE **********

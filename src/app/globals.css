@@ -8,9 +8,13 @@
   --background-end-rgb: 255, 255, 255;
 }
 
+html {
+  scroll-behavior: smooth !important;
+ }
+
 @layer base {
-  body {
-    @apply bg-[#ecf0f3] text-[#1f2937] tracking-wide scroll-smooth
+   body {
+    @apply bg-[#ecf0f3] text-[#1f2937] tracking-wide
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -30,7 +34,7 @@
   }
 
   button {
-    @apply cursor-pointer shadow-xl shadow-gray-400 rounded-xl uppercase bg-[tan] text-white
+    @apply cursor-pointer shadow-xl shadow-gray-400 rounded-xl uppercase bg-[tan] text-white hover:bg-[gray] hover:text-[tan]
   }
 
   .section-name {
