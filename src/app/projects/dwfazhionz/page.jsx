@@ -11,6 +11,7 @@ import Link from 'next/link'
 import { CustomIcon } from '@/components/customs/custom-icon.component'
 import { HiOutlineChevronDoubleLeft } from 'react-icons/hi'
 
+
 const dwfazhionz = () => {
   return (
     <PageContainer className='w-full'>
@@ -28,15 +29,26 @@ const dwfazhionz = () => {
       <div className='col-span-4'>
         <p className='mb-2'>Project</p>
         <h2 className='mb-2'>Overview</h2>
-        <p>This application was built using React JS and Firebase. Users are able to search clothing categories, view a product&#039;s description, add to a shopping bag, and checkout with credit card information via the Stripe API.  User authentication is available, so you can signup & signin to your account with an email address; or Google account. Product descriptions were made possible with the OpenAI API.</p>
+        <p>This application was built using React JS and Firebase. Users are able to search clothing categories, view a product&#039;s description, add to a shopping bag, and checkout with credit card information via the Stripe API.  User authentication is available, so you can signup & signin to your account with an email address; or Google account. Product descriptions were made possible with the embedded OpenAI API.</p>
 
         {/**
          * **** BUTTONS ****
          */}
         <a href='https://dw-fazhionz.netlify.app/' target={'_blank'}><button className='px-8 py-2 mt-4 mr-8'>Demo</button></a>
         <button className='px-8 py-2 mt-4'>Github</button>
-      </div>
 
+        {/**
+         * **** BACK TO PROJECTS BUTTON ****
+         */}
+        <Link href='/#projects' className='max-w-fit mt-8 flex gap-2 items-center mb-8 hover:text-[tan] hover:text-shadow-sm shadow-gray-900'>
+          <HiOutlineChevronDoubleLeft />
+          <p className=''>Projects</p>
+        </Link>
+      </div>
+      
+      {/**
+       * **** TECHNOLOGIES ****
+       */}
       <aside className='col-span-4 md:col-span-1 shadow-xl shadow-gray-400 rounded-xl p-4'>
         <div className='p-2 w-full'>
           <p className='text-center font-bold pb-2'>Technologies</p>
@@ -59,9 +71,7 @@ const dwfazhionz = () => {
         </div>
       </aside>
       
-      <Link href='/#projects'>
-        <p className='relative md:top-[-4em]  underline mb-8'>Back</p>
-      </Link>
+      
 
     </div>
     </PageContainer>

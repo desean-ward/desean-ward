@@ -5,9 +5,6 @@ import Skills from '@/components/skills/skills.component'
 import Projects from '@/components/projects/projects.component'
 import Contact from '@/components/contact/contact.component'
 
-import Image from 'next/image'
-import Link from 'next/link'
-
 
 export default function Home() {
 	return (

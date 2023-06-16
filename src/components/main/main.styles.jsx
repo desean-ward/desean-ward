@@ -6,3 +6,8 @@ export const MainWrapper = styled.div``
 
 export const MainContent = styled.div``
 
+export const CircularText = styled.div`
+    position: relative;
+   bottom: 8em;
+`
+
