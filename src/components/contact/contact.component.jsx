@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { ContactContainer } from './contact.styles'
+import { ContactContainer, ContactWrapper, ContentWrapper, LeftSide, LeftSideWrapper, RightSide, SocialIcons, FormWrapper, NamePhoneWrapper, Field, Input, TextArea } from './contact.styles'
 
 import Image from 'next/image'
 import Link from 'next/link'
@@ -16,16 +16,16 @@ import { HiOutlineChevronDoubleUp } from 'react-icons/hi'
 
 const Contact = () => {
 	return (
-		<ContactContainer id='contact' className='w-full md:h-screen pt-12'>
+		<ContactContainer id='contact'>
 			<div>
-				<div className='max-w-[1260px] m-auto px-2 py-16 w-full h-full'>
+				<ContactWrapper>
 					<p className='section-name'> Contact </p>
-					<h2 className='py-4'> Get In Touch </h2>
-					<div className='grid lg:grid-cols-5 gap-8'>
+					<h2 className='section-title'> Get In Touch </h2>
+					<ContentWrapper>
 						{' '}
 						{/* left side */}{' '}
-						<div className='col-span-3 lg:col-span-2 h-full shadow-xl shadow-gray-400 rounded-xl p-4'>
-							<div className='lg:p-4 h-full'>
+						<LeftSide>
+							<LeftSideWrapper>
 								<div>
 									<Image
 										className='w-full rounded-xl'
@@ -48,81 +48,81 @@ const Contact = () => {
 									<p className='uppercase pt-8'>
 										Connect With Me{' '}
 									</p>
-									<div className='flex items-center justify-between py-4 t-0'>
-										<CustomIcon className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300'>
+
+									{/* Social Icons */}
+									<SocialIcons>
+										<CustomIcon>
 											<FaLinkedinIn />
 										</CustomIcon>
-										<CustomIcon className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300'>
+
+										<CustomIcon>
 											<FaGithub />
 										</CustomIcon>
-										<CustomIcon className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300'>
+
+										<CustomIcon>
 											<AiOutlineMail />
 										</CustomIcon>
-										<CustomIcon className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300'>
+
+										<CustomIcon>
 											<BsFillPersonLinesFill />
 										</CustomIcon>{' '}
-									</div>{' '}
+									</SocialIcons>{' '}
 								</div>{' '}
-							</div>{' '}
-						</div>
+							</LeftSideWrapper>{' '}
+						</LeftSide>
+
 						{/* right side */}{' '}
-						<div className='col-span-3 h-auto shadow-xl shadow-gray-400 rounded-xl lg:p-4'>
-							<div className='p-4'>
+						<RightSide>
+							<FormWrapper>
 								<form>
-									<div className='grid md:grid-cols-2 gap-4 w-full py-2'>
-										<div className='flex flex-col'>
-											<label className='uppercase text-sm py-2'>
+									<NamePhoneWrapper>
+										<Field>
+											<label>
 												Name{' '}
 											</label>{' '}
-											<input
-												className='border-2 rounded-lg p-3 flex border-gray-300 focus:outline-none'
+											<Input
 												type='text'
 											/>
-										</div>
-										<div className='flex flex-col'>
-											<label className='uppercase text-sm py-2'>
+										</Field>
+										
+										<Field>
+											<label>
 												Phone{' '}
 											</label>{' '}
-											<input
-												className='border-2 rounded-lg p-3 flex  border-gray-300 focus:outline-none'
+											<Input
 												type='text'
 											/>
-										</div>{' '}
-									</div>
-									<div className='flex flex-col'>
-										<label className='uppercase text-sm py-2'>
+										</Field>{' '}
+									</NamePhoneWrapper>
+
+									<Field>
+										<label>
 											Email{' '}
 										</label>{' '}
-										<input
-											className='border-2 rounded-lg p-3 flex  border-gray-300 focus:outline-none'
-											type='email'
-										/>
-									</div>
-									<div className='flex flex-col'>
-										<label className='uppercase text-sm py-2'>
+										<Input type='email' />
+									</Field>
+
+									<Field>
+										<label>
 											Subject{' '}
 										</label>{' '}
-										<input
-											className='border-2 rounded-lg p-3 flex  border-gray-300 focus:outline-none'
-											type='text'
-										/>
-									</div>
-									<div className='flex flex-col'>
-										<label className='uppercase text-sm py-2'>
+										<Input type='text' />
+									</Field>
+
+									<Field>
+										<label>
 											Message{' '}
 										</label>{' '}
-										<textarea
-											className='border-2 rounded-lg p-3 resize-none focus:outline-none'
-											rows={5}
-										/>{' '}
-									</div>
+										<TextArea rows={5} />{' '}
+									</Field>
+									
 									<button className='w-full p-4 text-gray-900 mt-4'>
 										Send Message{' '}
 									</button>{' '}
 								</form>{' '}
-							</div>{' '}
-						</div>{' '}
-					</div>
+							</FormWrapper>{' '}
+						</RightSide>{' '}
+					</ContentWrapper>
 					<div className='flex justify-center py-12'>
 						<Link href='/'>
 							<CustomIcon>
@@ -130,7 +130,7 @@ const Contact = () => {
 							</CustomIcon>{' '}
 						</Link>{' '}
 					</div>{' '}
-				</div>{' '}
+				</ContactWrapper>{' '}
 			</div>{' '}
 		</ContactContainer>
 	)

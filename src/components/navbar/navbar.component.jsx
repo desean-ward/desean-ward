@@ -52,7 +52,7 @@ const Navbar = () => {
 				{/**
 				 * ********** LOGO **********
 				 */}
-				<h2 style={{ color: `${linkColor}` }}>D.W.</h2>
+				<h2 style={{ color: `${linkColor}` }}>De Sean Ward</h2>
 
 				{/**
 				 * ********** NAV **********

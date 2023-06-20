@@ -26,7 +26,11 @@ html {
   }
 
   h2 {
-    @apply text-3xl sm:text-4xl md:text-5xl
+    @apply text-3xl
+  }
+
+  p {
+    @apply py-2
   }
 
   li {
@@ -34,7 +38,7 @@ html {
   }
 
   button {
-    @apply cursor-pointer shadow-xl shadow-gray-400 rounded-xl uppercase bg-[tan] text-white hover:bg-[gray] hover:text-[tan]
+    @apply cursor-pointer shadow-xl shadow-gray-400 rounded-xl uppercase bg-[tan] text-white hover:bg-[black] hover:text-[tan]
   }
 
   .section-name {

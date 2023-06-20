@@ -1,19 +1,18 @@
 import Image from 'next/image'
 import React from 'react'
-import { SkillsContainer } from './skills.styles'
+import { SkillWrapper, SkillsContainer, SkillsContentWrapper, SkillsTechWrapper, Skill, SkillTitle } from './skills.styles'
 
 const Skills = () => {
-  const skills = ['react', 'nextjs', 'javascript', 'html', 'css', 'firebase', 'node', 'styled-components', 'tailwind', 'openai', 'github', 'stripe']
+  const skills = ['react', 'nextjs', 'javascript', 'html', 'sass', 'firebase', 'node', 'styled-components', 'tailwind', 'openai', 'github', 'stripe']
   
   return (
-    <SkillsContainer id='skills' className='w-full md:h-screen p-2'>
-      <div className='max-w-[1240px] mx-auto flex flex-col justify-center h-full'>
-        <p className='uppercase text-xl tracking-widest text-[tan] text-shadow-sm shadow-gray-900'>Skills</p>
+    <SkillsContainer id='skills' className=''>
+      <SkillsContentWrapper>
+        <p className='section-name'>Skills</p>
 
-        <h2 className='py-4'>What I Can Do</h2>
+        <h2 className='section-title'>What I Can Do</h2>
 
-        <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-8'>
-
+        <SkillsTechWrapper>
         {
           /**
            * *** SKILLS GRID ***
@@ -23,20 +22,19 @@ const Skills = () => {
 
             return (
               
-                <div key={skills.indexOf(skill)} className='p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-300'>
-                  <div className='grid grid-cols-2 gap-4 justify-center items-center'>
+                <SkillWrapper key={skills.indexOf(skill)}>
+                  <Skill>
                     <div className="m-auto">
                       <Image src={fileName} alt='/' width='64' height='64' />
                     </div>
-                    <div className="flex flex-col items-center justify-center"><h3>{skill.toUpperCase()}</h3></div>
-                  </div>
-                </div>
+                    <SkillTitle><h3>{skill.toUpperCase()}</h3></SkillTitle>
+                  </Skill>
+                </SkillWrapper>
             )
           })
         }
-        </div>
-
-      </div>
+        </SkillsTechWrapper>
+      </SkillsContentWrapper>
     </SkillsContainer>
 
   )
