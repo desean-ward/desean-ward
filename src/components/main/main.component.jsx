@@ -26,7 +26,7 @@ const Main = () => {
 						<ImageWrapper>
 							<CustomImageRound>
 								<Image
-									src='/../public/assets/portfolio-pic-tp.png'
+									src='/assets/portfolio-pic-tp.png'
 									width='250'
 									height='250'
 									className='rounded-full bg-[tan] w-[250px] md:w-[300px]'
