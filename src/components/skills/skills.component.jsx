@@ -18,7 +18,7 @@ const Skills = () => {
            * *** SKILLS GRID ***
            */
           skills.map(skill => {
-            let fileName = '/../public/assets/skills/' + skill + '.png'
+            let fileName = '/assets/skills/' + skill + '.png'
 
             return (
               

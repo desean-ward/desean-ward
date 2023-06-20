@@ -63,19 +63,19 @@ const Navbar = () => {
 						<li className='ml-10'>Home</li>
 					</CustomLink>
 
-					<CustomLink href='/#about'>
+					<CustomLink href='#about'>
 						<li className='ml-10'>About</li>
 					</CustomLink>
 
-					<CustomLink href='/#skills'>
+					<CustomLink href='#skills'>
 						<li className='ml-10'>Skills</li>
 					</CustomLink>
 
-					<CustomLink href='/#projects'>
+					<CustomLink href='#projects'>
 						<li className='ml-10'>Projects</li>
 					</CustomLink>
 
-					<CustomLink href='/#contact'>
+					<CustomLink href='#contact'>
 						<li className='ml-10'>Contact Me</li>
 					</CustomLink>
 				</ul>
