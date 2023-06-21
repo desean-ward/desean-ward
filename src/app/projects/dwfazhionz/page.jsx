@@ -21,6 +21,7 @@ import { RiRadioButtonFill } from 'react-icons/ri'
 import Link from 'next/link'
 import { CustomIcon } from '@/components/customs/custom-icon.component'
 import { HiOutlineChevronDoubleLeft } from 'react-icons/hi'
+import CustomLink from '@/components/customs/custom-link.component'
 
 const dwfazhionz = () => {
 	return (
@@ -73,10 +74,10 @@ const dwfazhionz = () => {
 					
 					 */}
 					<ProjectsBtn>
-						<a href='/#projects'>
+						<CustomLink href='/#projects' scroll={false}>
 							<HiOutlineChevronDoubleLeft className='inline-block mr-2' />
 							<span className='inline-block '>Projects</span>
-						</a>
+						</CustomLink>
 					</ProjectsBtn>
 				</div>
 

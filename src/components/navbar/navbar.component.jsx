@@ -21,12 +21,12 @@ const Navbar = () => {
 	const pathname = usePathname()
 
 	useEffect(() => {
-		if (pathname === '/projects/dwfazhionz') {
+		if (pathname.match('/projects/')) {
 			setNavBg('transparent')
 			setLinkColor('#ecf0f3')
 		} else {
 			setNavBg('#ecf0f3')
-			setLinkColor('text-gray-700')
+			setLinkColor('black')
 		}
 	}, [pathname])
 
@@ -59,25 +59,25 @@ const Navbar = () => {
 				<ul
 					style={{ color: `${linkColor}` }}
 					className='hidden md:flex text-sm uppercase'>
-					<NavLink href='/#home'>
+					<CustomLink href='/#home' scroll={false}>
 						<li className='ml-10'>Home</li>
-					</NavLink>
+					</CustomLink>
 
-					<NavLink href='/#about'>
+					<CustomLink href='/#about' scroll={false}>
 						<li className='ml-10'>About</li>
-					</NavLink>
+					</CustomLink>
 
-					<NavLink href='/#skills'>
+					<CustomLink href='/#skills' scroll={false}>
 						<li className='ml-10'>Skills</li>
-					</NavLink>
+					</CustomLink>
 
-					<NavLink href='/#projects'>
+					<CustomLink href='/#projects' scroll={false}>
 						<li className='ml-10'>Projects</li>
-					</NavLink>
+					</CustomLink>
 
-					<NavLink href='/#contact'>
+					<CustomLink href='/#contact' scroll={false}>
 						<li className='ml-10'>Contact Me</li>
-					</NavLink>
+					</CustomLink>
 				</ul>
 
 				<div
