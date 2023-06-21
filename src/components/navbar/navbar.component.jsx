@@ -63,7 +63,7 @@ const Navbar = () => {
 						<li className='ml-10'>Home</li>
 					</CustomLink>
 
-					<CustomLink href='/#about' scroll={false}>
+					<CustomLink href='/#about' as='/about' scroll={false}>
 						<li className='ml-10'>About</li>
 					</CustomLink>
 
