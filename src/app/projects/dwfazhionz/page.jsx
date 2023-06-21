@@ -31,7 +31,6 @@ const dwfazhionz = () => {
 				<Image
 					className='absolute z-1'
 					fill
-					objectFit='cover'
 					src={dwFazhionz}
 					alt='/'
 				/>
