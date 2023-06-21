@@ -38,7 +38,7 @@ html {
   }
 
   button {
-    @apply cursor-pointer shadow-xl shadow-gray-400 rounded-xl uppercase bg-[tan] text-white hover:bg-[black] hover:text-[tan]
+    @apply cursor-pointer shadow-xl shadow-gray-400 rounded-xl uppercase bg-[tan] text-black hover:bg-[black] hover:text-[tan]
   }
 
   .section-name {

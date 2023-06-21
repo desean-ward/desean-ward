@@ -61,3 +61,12 @@ export const Tech = tw.p`
     py-2 
     flex items-center
 `
+
+export const ProjectsBtn = tw.p`
+max-w-fit 
+mt-8 
+flex justify-center items-center gap-4 
+mb-8 
+hover:text-[tan] 
+hover:text-shadow-sm shadow-gray-900
+`

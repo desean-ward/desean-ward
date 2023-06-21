@@ -8,10 +8,11 @@ import {
 	HeaderOverlay,
 	HeaderText,
 	MainContent,
-  TechContainer,
-  TechWrapper,
-  Tech,
-  Technologies,
+	TechContainer,
+	TechWrapper,
+	Tech,
+	Technologies,
+	ProjectsBtn,
 } from './page.styles'
 
 import dwFazhionz from '../../../../public/assets/projects/dw-fazhionz.jpg'
@@ -58,6 +59,7 @@ const dwfazhionz = () => {
 
 					{/**
 					 * **** BUTTONS ****
+					
 					 */}
 					<a
 						href='https://dw-fazhionz.netlify.app/'
@@ -68,13 +70,14 @@ const dwfazhionz = () => {
 
 					{/**
 					 * **** BACK TO PROJECTS BUTTON ****
+					
 					 */}
-					<Link
-						href='/#projects'
-						className='max-w-fit mt-8 flex gap-2 items-center mb-8 hover:text-[tan] hover:text-shadow-sm shadow-gray-900'>
-						<HiOutlineChevronDoubleLeft />
-						<p className=''>Projects</p>
-					</Link>
+					<ProjectsBtn>
+						<a href='/#projects'>
+							<HiOutlineChevronDoubleLeft className='inline-block mr-2' />
+							<span className='inline-block '>Projects</span>
+						</a>
+					</ProjectsBtn>
 				</div>
 
 				{/**
@@ -108,7 +111,7 @@ const dwfazhionz = () => {
 							<Tech>
 								<RiRadioButtonFill className='pr-1' /> Firebase
 							</Tech>
-              
+
 							<Tech>
 								<RiRadioButtonFill className='pr-1' /> OpenAI
 							</Tech>

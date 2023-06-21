@@ -11,7 +11,7 @@ import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
 import { BsFillPersonLinesFill } from 'react-icons/bs'
 import { CustomIcon, CustomIconNav } from '../customs/custom-icon.component'
 import CustomLink from '../customs/custom-link.component'
-import { NavContainer, NavWrapper } from './navbar.styles'
+import { NavContainer, NavLink, NavWrapper } from './navbar.styles'
 
 const Navbar = () => {
 	const [nav, setNav] = useState(false)
@@ -26,7 +26,7 @@ const Navbar = () => {
 			setLinkColor('#ecf0f3')
 		} else {
 			setNavBg('#ecf0f3')
-			setLinkColor(linkColor)
+			setLinkColor('text-gray-700')
 		}
 	}, [pathname])
 
@@ -59,25 +59,25 @@ const Navbar = () => {
 				<ul
 					style={{ color: `${linkColor}` }}
 					className='hidden md:flex text-sm uppercase'>
-					<CustomLink href='/'>
+					<NavLink href='/#home'>
 						<li className='ml-10'>Home</li>
-					</CustomLink>
+					</NavLink>
 
-					<CustomLink href='#about'>
+					<NavLink href='/#about'>
 						<li className='ml-10'>About</li>
-					</CustomLink>
+					</NavLink>
 
-					<CustomLink href='#skills'>
+					<NavLink href='/#skills'>
 						<li className='ml-10'>Skills</li>
-					</CustomLink>
+					</NavLink>
 
-					<CustomLink href='#projects'>
+					<NavLink href='/#projects'>
 						<li className='ml-10'>Projects</li>
-					</CustomLink>
+					</NavLink>
 
-					<CustomLink href='#contact'>
+					<NavLink href='/#contact'>
 						<li className='ml-10'>Contact Me</li>
-					</CustomLink>
+					</NavLink>
 				</ul>
 
 				<div

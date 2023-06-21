@@ -16,3 +16,7 @@ export const NavWrapper = tw.div`
     h-full 
     px-4 2xl:px-16
 `
+
+export const NavLink = tw.a`
+     hover:text-[tan] hover:text-shadow-sm shadow-gray-900
+`

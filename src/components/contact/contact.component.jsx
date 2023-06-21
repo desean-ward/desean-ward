@@ -124,7 +124,7 @@ const Contact = () => {
 						</RightSide>{' '}
 					</ContentWrapper>
 					<div className='flex justify-center py-12'>
-						<Link href='/'>
+						<Link href='#home'>
 							<CustomIcon>
 								<HiOutlineChevronDoubleUp size={30} />{' '}
 							</CustomIcon>{' '}
