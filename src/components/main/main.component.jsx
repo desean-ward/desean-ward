@@ -109,7 +109,7 @@ const Main = () => {
 				<BottomInfoWrapper>
 					<CircularText>
 						<Image
-							src='/../public/assets/svg/circular-text.png'
+							src='/assets/svg/circular-text.png'
 							width='250'
 							height='250'
 							style={{
