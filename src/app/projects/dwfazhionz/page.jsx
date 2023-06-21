@@ -1,6 +1,8 @@
 'use client'
-import Image from 'next/image'
 import React from 'react'
+
+import Link from 'next/link'
+import Image from 'next/image'
 
 import {
 	PageContainer,
@@ -18,7 +20,6 @@ import {
 import dwFazhionz from '../../../../public/assets/projects/dw-fazhionz.jpg'
 
 import { RiRadioButtonFill } from 'react-icons/ri'
-import Link from 'next/link'
 import { CustomIcon } from '@/components/customs/custom-icon.component'
 import { HiOutlineChevronDoubleLeft } from 'react-icons/hi'
 import CustomLink from '@/components/customs/custom-link.component'
@@ -61,11 +62,11 @@ const dwfazhionz = () => {
 					 * **** BUTTONS ****
 					
 					 */}
-					<a
+					<Link
 						href='https://dw-fazhionz.netlify.app/'
 						target={'_blank'}>
 						<button className='px-8 py-2 mt-4 mr-8'>Demo</button>
-					</a>
+					</Link>
 					<button className='px-8 py-2 mt-4'>Github</button>
 
 					{/**

@@ -1,15 +1,30 @@
+import React from 'react'
+
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
+
 import { AiOutlineMail } from 'react-icons/ai'
 import { BsDownload, BsFillPersonLinesFill } from 'react-icons/bs'
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
 import { CustomIcon } from '../customs/custom-icon.component'
+
 import {
 	CustomImage,
 	CustomImageRound,
 } from '../customs/custom-image.component'
-import { CircularText, HomeContainer, MainWrapper, IntroWrapper, ImageWrapper, TextWrapper, SocialIconsWrapper, BottomInfoWrapper, InitialsWrapper, ResumeButtonWrapper } from './main.styles'
+
+import {
+	CircularText,
+	HomeContainer,
+	MainWrapper,
+	IntroWrapper,
+	ImageWrapper,
+	TextWrapper,
+	SocialIconsWrapper,
+	BottomInfoWrapper,
+	InitialsWrapper,
+	ResumeButtonWrapper,
+} from './main.styles'
 
 const Main = () => {
 	return (
@@ -22,19 +37,18 @@ const Main = () => {
 					{/**
 					 * ********** IMAGE **********
 					 */}
-					
-						<ImageWrapper>
-							<CustomImageRound>
-								<Image
-									src='/assets/portfolio-pic-tp.png'
-									width='250'
-									height='250'
-									className='rounded-full bg-[tan] w-[250px] md:w-[300px]'
-									alt='/'
-								/>
-							</CustomImageRound>
-						</ImageWrapper>
-					
+
+					<ImageWrapper>
+						<CustomImageRound>
+							<Image
+								src='/assets/portfolio-pic-tp.png'
+								width='250'
+								height='250'
+								className='rounded-full bg-[tan] w-[250px] md:w-[300px]'
+								alt='/'
+							/>
+						</CustomImageRound>
+					</ImageWrapper>
 
 					{/**
 					 * ********** TEXT **********
@@ -68,13 +82,13 @@ const Main = () => {
 				 * ********** SOCIAL MEDIA ICONS **********
 				 */}
 				<SocialIconsWrapper>
-					<a
+					<Link
 						href='https://www.linkedin.com/in/desean-ward'
 						target='_blank'>
 						<CustomIcon className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300'>
 							<FaLinkedinIn />
 						</CustomIcon>
-					</a>
+					</Link>
 
 					<CustomIcon className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300'>
 						<FaGithub />
@@ -103,33 +117,28 @@ const Main = () => {
 								height: '100%',
 								objectFit: 'cover',
 							}}
-						className='inline-block animate-spin-slow'
+							className='inline-block animate-spin-slow'
 							alt='/'
 						/>
 
 						<InitialsWrapper>
-							<span className='initials'>
-								D.W.
-							</span>
+							<span className='initials'>D.W.</span>
 						</InitialsWrapper>
 					</CircularText>
 
 					{/**
 					 * **** RESUME BUTTON ****
 					 */}
-					 <ResumeButtonWrapper>
-					<Link
-						href='#'
-						download
-						className=''>
-						<span className=''>
-							Resume
-							<BsDownload
-								size={20}
-								className='relative inline-block ml-2 '
-							/>
-						</span>
-					</Link>
+					<ResumeButtonWrapper>
+						<Link href='#' download className=''>
+							<span className=''>
+								Resume
+								<BsDownload
+									size={20}
+									className='relative inline-block ml-2 '
+								/>
+							</span>
+						</Link>
 					</ResumeButtonWrapper>
 				</BottomInfoWrapper>
 			</MainWrapper>

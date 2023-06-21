@@ -143,7 +143,7 @@ const Navbar = () => {
 					 */}
 					<div className='py-4 flex flex-col'>
 						<ul className='uppercase text-sm'>
-							<CustomLink href='/#home'>
+							<CustomLink href='#home' scroll={false}>
 								<li
 									className='pb-4'
 									onClick={() => setNav(false)}>
@@ -151,7 +151,7 @@ const Navbar = () => {
 								</li>
 							</CustomLink>
 
-							<CustomLink href='/#about'>
+							<CustomLink href='#about' scroll={false}>
 								<li
 									className='pb-4'
 									onClick={() => setNav(false)}>
@@ -159,7 +159,7 @@ const Navbar = () => {
 								</li>
 							</CustomLink>
 
-							<CustomLink href='/#skills'>
+							<CustomLink href='#skills' scroll={false}>
 								<li
 									className='pb-4'
 									onClick={() => setNav(false)}>
@@ -167,7 +167,7 @@ const Navbar = () => {
 								</li>
 							</CustomLink>
 
-							<CustomLink href='/#projects'>
+							<CustomLink href='#projects' scroll={false}>
 								<li
 									className='pb-4'
 									onClick={() => setNav(false)}>
@@ -175,7 +175,7 @@ const Navbar = () => {
 								</li>
 							</CustomLink>
 
-							<CustomLink href='/#contact'>
+							<CustomLink href='#contact' scroll={false}>
 								<li
 									className='pb-4'
 									onClick={() => setNav(false)}>
