@@ -2,8 +2,15 @@ import Image from 'next/image'
 import React from 'react'
 import { SkillWrapper, SkillsContainer, SkillsContentWrapper, SkillsTechWrapper, Skill, SkillTitle } from './skills.styles'
 
+import { motion } from 'framer-motion'
+
 const Skills = () => {
   const skills = ['react', 'nextjs', 'javascript', 'html', 'sass', 'firebase', 'node', 'styled-components', 'tailwind', 'openai', 'github', 'stripe']
+
+  const scaleIn = {
+		initial: { scale: 0 },
+		animate: { scale: 1, transition: { delay: 0.5}}
+	}
   
   return (
     <SkillsContainer id='skills' className=''>
@@ -12,7 +19,11 @@ const Skills = () => {
 
         <h2 className='section-title'>What I Can Do</h2>
 
-        <SkillsTechWrapper>
+        <SkillsTechWrapper
+        variants={scaleIn}
+        initial='initial'
+        animate='animate'
+        >
         {
           /**
            * *** SKILLS GRID ***
@@ -22,14 +33,17 @@ const Skills = () => {
 
             return (
               
-                <SkillWrapper key={skills.indexOf(skill)}>
-                  <Skill>
-                    <div className="m-auto">
-                      <Image src={fileName} alt='/' width='64' height='64' />
-                    </div>
-                    <SkillTitle><h3>{skill.toUpperCase()}</h3></SkillTitle>
-                  </Skill>
-                </SkillWrapper>
+                  <SkillWrapper 
+                    key={skills.indexOf(skill)}
+                  >
+                    <Skill >
+                      <div className="m-auto">
+                        <Image src={fileName} alt='/' width='64' height='64' />
+                      </div>
+                      <SkillTitle><h3>{skill.toUpperCase()}</h3></SkillTitle>
+                    </Skill>
+                  </SkillWrapper>
+               
             )
           })
         }

@@ -28,7 +28,7 @@ export const ProjectItemWrapper = tw.div`
 
 export const ProjectItemOverlay = tw(motion.div)`
     group 
-    absolute 
+    absolute
     h-[100%] 
     w-[100%] 
     bg-gradient-to-r from-[black] to-[tan] 
@@ -39,6 +39,7 @@ export const ProjectItemOverlay = tw(motion.div)`
 `
 
 export const OverlayText = tw.div`
+    group
     absolute 
     w-[80%]
     top-[50%] translate-y-[-50%]
@@ -47,22 +48,22 @@ export const OverlayText = tw.div`
 `
 
 export const ButtonContainer = tw.div`
-    { 
-        screen.width < 768 
-        ? 'absolute m-auto w-[60%] top-[-100%] opacity-90' 
-        : ''
+    ${ props => 
+        props.screen < 768 
+        ? 'absolute left-[50%] translate-x-[-50%] w-[60%] top-[-100%]' 
+        : 'w-full'
     }
 
     p {
         width-[80%] 
         text-center 
-        py-3 
+        py-2 
         rounded-lg 
         bg-black text-[tan] 
         font-bold 
         lg:text-lg 
         cursor-pointer 
-        hover:bg-[lightgray] hover:text-black
+        hover:bg-[lightgray] hover:text-black ease-in-out duration-300
     }
 `
 

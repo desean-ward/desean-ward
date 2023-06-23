@@ -15,13 +15,18 @@ import {
 } from './project-item.styles'
 
 const ProjectItem = ({ key, img, title, text, page }) => {
-	const [overlay, setOverlay] = useState(false)
+	const [ overlay, setOverlay ] = useState(false)
+	const [ thisScreen, setThisScreen ] = useState(0)
 
 	const show = {
 		hidden: { top: '100%' },
 		visible: overlay ? { top: 0, opacity: 0.9 } : { top: '100%' },
 		exit: { top: '100%' },
 	}
+
+	useEffect(() => {
+		setThisScreen(screen.width)
+	}, [])
 
 	return (
 		<ProjectItemContainer>
@@ -52,7 +57,7 @@ const ProjectItem = ({ key, img, title, text, page }) => {
 							{/**
 							 * *** MORE INFO BUTTON***
 							 */}
-							<ButtonContainer>
+							<ButtonContainer screen={thisScreen}>
 								<Link href={page}>
 									<p>More Info</p>
 								</Link>

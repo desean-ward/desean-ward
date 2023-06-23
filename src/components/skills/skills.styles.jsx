@@ -1,11 +1,13 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 import tw from 'tailwind-styled-components'
+import { motion } from 'framer-motion'
 
 export const SkillsContainer = tw.div`
-    w-full 
-    p-2 pt-[6em] 
-
-    md:pt-0
+    w-full
+    relative
+    mt-[8em] sm:top-0
+    p-2 
+    pt-[5em] sm:pt-0
     md:h-screen 
 `
 
@@ -16,7 +18,7 @@ export const SkillsContentWrapper = tw.div`
     h-full
 `
 
-export const SkillsTechWrapper = tw.div`
+export const SkillsTechWrapper = tw(motion.div)`
     grid md:grid-cols-2 lg:grid-cols-4 gap-8
 `
 

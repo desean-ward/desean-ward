@@ -26,7 +26,47 @@ import {
 	ResumeButtonWrapper,
 } from './main.styles'
 
+import { motion } from 'framer-motion'
+
 const Main = () => {
+	const fadeInLeft = {
+		initial: { x: '-100', opacity: 0},
+		animate: { x: 0, opacity: 1, transition: {duration: 0.5}}
+	}
+	
+	const fadeInRight = {
+		initial: { x: '100', opacity: 0},
+		animate: { x: 0, opacity: 1, transition: {duration: 0.5}}
+	}
+
+	const fadeUp = {
+		initial: { y: '100', opacity: 0},
+		animate: { y: 0, opacity: 1, transition: {duration: 0.5, delay: 1}}
+	}
+
+	const fadeIn = {
+		initial: { opacity: 0 },
+		animate: { opacity: 1 , transition: { duration: 0.5, delay: 0.5 } }
+	}
+	
+	const fadeIn2 = {
+		initial: { opacity: 0 },
+		animate: { opacity: 1 , transition: { duration: 0.5, delay: 1.5 } }
+	}
+
+	const content = {
+		initial: { opacity: 1 },
+		animate: { opacity: 1, transition: { delayChildren: 0, staggerChildren: 0.05 }}
+	}
+
+	const singleWord= {
+		initial: { opacity: 0 },
+		animate: { opacity: 1 }
+	}
+
+
+	const text = 'As a skilled full-stack developer, I am dedicated to turning ideas into innovative web applications. Explore my latest projects, showcasing my expertisein React.js and web development.'
+
 	return (
 		<HomeContainer id='home'>
 			<MainWrapper>
@@ -38,13 +78,17 @@ const Main = () => {
 					 * ********** IMAGE **********
 					 */}
 
-					<ImageWrapper>
+					<ImageWrapper
+					 variants={fadeInLeft}
+					 initial='initial'
+					 animate='animate'
+					>
 						<CustomImageRound>
 							<Image
 								src='/assets/portfolio-pic-tp.png'
 								width='250'
 								height='250'
-								className='rounded-full bg-[tan] w-[250px] md:w-[300px]'
+								className='rounded-full bg-[tan]'
 								alt='/'
 							/>
 						</CustomImageRound>
@@ -53,35 +97,61 @@ const Main = () => {
 					{/**
 					 * ********** TEXT **********
 					 */}
-					<TextWrapper>
+					<TextWrapper
+					 variants={fadeInRight}
+					 initial='initial'
+					 animate='animate'
+					>
 						<p className='uppercase text-sm tracking-widest'>
 							Let&#039;s build solutions!
 						</p>
 
-						<h1 className='py-4 text-gray-700'>
+						<motion.h1
+					 		variants={fadeIn}
+							initial='initial'
+							animate='animate'
+							className='py-4 text-gray-700'
+						>
 							Hi, I&#039;m{' '}
 							<span className='text-[tan] text-shadow-lg shadow-gray-900'>
 								{' '}
 								De Sean
 							</span>
-						</h1>
-						<h2 className='py-2 text-gray-700'>
-							Front-End Web Developer
-						</h2>
+						</motion.h1>
 
-						<p className='py-4'>
-							As a skilled full-stack developer, I am dedicated to
-							turning ideas into innovative web applications.
-							Explore my latest projects, showcasing my expertise
-							in React.js and web development.
-						</p>
+						<motion.h2 className='py-2 text-gray-700'>
+							Front-End Web Developer
+						</motion.h2>
+
+							<motion.p
+								variants={content}
+								initial='initial'
+								animate='animate'
+								className='py-4'
+							>
+								{
+									text.split(" ").map((word, index) => 
+										<motion.span 
+											key={word + '-' + index} 
+											className='inline-block'
+											variants={singleWord}
+											>{
+												word}&nbsp;
+										</motion.span>
+									)
+								}
+							</motion.p>
 					</TextWrapper>
 				</IntroWrapper>
 
 				{/**
 				 * ********** SOCIAL MEDIA ICONS **********
 				 */}
-				<SocialIconsWrapper>
+				<SocialIconsWrapper
+				 variants={fadeUp}
+				 initial='initial'
+				 animate='animate'
+				>
 					<Link
 						href='https://www.linkedin.com/in/desean-ward'
 						target='_blank'>
@@ -104,9 +174,13 @@ const Main = () => {
 				</SocialIconsWrapper>
 
 				{/**
-				 * **** CIRCULAR TEXT ****
+				 * **** BOTTOM INFO ****
 				 */}
-				<BottomInfoWrapper>
+				<BottomInfoWrapper
+					variants={fadeIn2}
+					initial='initial'
+					animate='animate'
+				>
 					<CircularText>
 						<Image
 							src='/assets/svg/circular-text.png'

@@ -1,6 +1,20 @@
 import React from 'react'
 
-import { ContactContainer, ContactWrapper, ContentWrapper, LeftSide, LeftSideWrapper, RightSide, SocialIcons, FormWrapper, NamePhoneWrapper, Field, Input, TextArea } from './contact.styles'
+import {
+	ContactContainer,
+	ContactWrapper,
+	ContentWrapper,
+	LeftSide,
+	LeftSideWrapper,
+	RightSide,
+	SocialIcons,
+	FormWrapper,
+	NamePhoneWrapper,
+	Field,
+	Input,
+	TextArea,
+	BackToTop,
+} from './contact.styles'
 
 import Image from 'next/image'
 import Link from 'next/link'
@@ -15,6 +29,24 @@ import { BsFillPersonLinesFill } from 'react-icons/bs'
 import { HiOutlineChevronDoubleUp } from 'react-icons/hi'
 
 const Contact = () => {
+	const fadeInLeft = {
+		initial: { x: '-100', opacity: 0 },
+		animate: {
+			x: 0,
+			opacity: 1,
+			transition: { delay: 0.5, duration: 0.5 },
+		},
+	}
+
+	const fadeInRight = {
+		initial: { x: '100', opacity: 0 },
+		animate: {
+			x: 0,
+			opacity: 1,
+			transition: { delay: 0.5, duration: 0.5 },
+		},
+	}
+
 	return (
 		<ContactContainer id='contact'>
 			<div>
@@ -22,9 +54,13 @@ const Contact = () => {
 					<p className='section-name'> Contact </p>
 					<h2 className='section-title'> Get In Touch </h2>
 					<ContentWrapper>
-						{' '}
-						{/* left side */}{' '}
-						<LeftSide>
+						
+						{/* left side */}
+						<LeftSide
+							variants={fadeInLeft}
+							initial='initial'
+							animate='animate'
+						>
 							<LeftSideWrapper>
 								<div>
 									<Image
@@ -34,19 +70,22 @@ const Contact = () => {
 										alt='/'
 									/>
 								</div>
+
 								<div>
 									<h2 className='py-2 text-[tan] text-shadow-lg shadow-gray-900'>
-										De Sean Ward{' '}
-									</h2>{' '}
-									<p> Front - End Developer </p>{' '}
+										De Sean Ward
+									</h2>
+									<p> Front - End Developer </p>
 									<p className='py-4'>
 										I am available for freelance or full -
-										time positions.Contact me and let&#039;s talk.
+										time positions.Contact me and let&#039;s
+										talk.
 									</p>
 								</div>
+
 								<div>
 									<p className='uppercase pt-8'>
-										Connect With Me{' '}
+										Connect With Me
 									</p>
 
 									{/* Social Icons */}
@@ -65,73 +104,64 @@ const Contact = () => {
 
 										<CustomIcon>
 											<BsFillPersonLinesFill />
-										</CustomIcon>{' '}
-									</SocialIcons>{' '}
-								</div>{' '}
-							</LeftSideWrapper>{' '}
+										</CustomIcon>
+									</SocialIcons>
+								</div>
+							</LeftSideWrapper>
 						</LeftSide>
-
-						{/* right side */}{' '}
-						<RightSide>
+						
+						{/* right side */}
+						<RightSide
+						variants={fadeInRight}
+						initial='initial'
+						animate='animate'
+					>
 							<FormWrapper>
 								<form>
 									<NamePhoneWrapper>
 										<Field>
-											<label>
-												Name{' '}
-											</label>{' '}
-											<Input
-												type='text'
-											/>
+											<label>Name </label>
+											<Input type='text' />
 										</Field>
-										
+
 										<Field>
-											<label>
-												Phone{' '}
-											</label>{' '}
-											<Input
-												type='text'
-											/>
-										</Field>{' '}
+											<label>Phone </label>
+											<Input type='text' />
+										</Field>
 									</NamePhoneWrapper>
 
 									<Field>
-										<label>
-											Email{' '}
-										</label>{' '}
+										<label>Email </label>
 										<Input type='email' />
 									</Field>
 
 									<Field>
-										<label>
-											Subject{' '}
-										</label>{' '}
+										<label>Subject </label>
 										<Input type='text' />
 									</Field>
 
 									<Field>
-										<label>
-											Message{' '}
-										</label>{' '}
-										<TextArea rows={5} />{' '}
+										<label>Message </label>
+										<TextArea rows={5} />
 									</Field>
-									
+
 									<button className='w-full p-4 text-gray-900 mt-4'>
-										Send Message{' '}
-									</button>{' '}
-								</form>{' '}
-							</FormWrapper>{' '}
-						</RightSide>{' '}
+										Send Message
+									</button>
+								</form>
+							</FormWrapper>
+						</RightSide>
 					</ContentWrapper>
-					<div className='flex justify-center py-12'>
+
+					<BackToTop>
 						<Link href='#home'>
 							<CustomIcon>
-								<HiOutlineChevronDoubleUp size={30} />{' '}
-							</CustomIcon>{' '}
-						</Link>{' '}
-					</div>{' '}
-				</ContactWrapper>{' '}
-			</div>{' '}
+								<HiOutlineChevronDoubleUp size={30} />
+							</CustomIcon>
+						</Link>
+					</BackToTop>
+				</ContactWrapper>
+			</div>
 		</ContactContainer>
 	)
 }

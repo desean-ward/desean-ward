@@ -26,7 +26,7 @@ const Navbar = () => {
 			setLinkColor('#ecf0f3')
 		} else {
 			setNavBg('#ecf0f3')
-			setLinkColor('black')
+			setLinkColor('#000000')
 		}
 	}, [pathname])
 

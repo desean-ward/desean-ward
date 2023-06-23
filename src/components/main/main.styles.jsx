@@ -1,47 +1,52 @@
 import tw from 'tailwind-styled-components'
+import { motion } from 'framer-motion'
 
 export const HomeContainer = tw.div`
     h-screen
     w-screen
     flex flex-col justify-center items-center
+    px-2
+    mb-[16em] sm:mb-0
 `
 
 export const MainWrapper = tw.div`
     w-fit max-w-[1240px] 
-    h-fit 
+    h-fit
     grid content-center-center
-`
-
-export const IntroWrapper = tw.div`
+    relative
+    top-[16em] xs:top-[8em] sm:top-0
+    `
+    
+    export const IntroWrapper = tw.div`
     w-full 
     h-fit 
     mx-auto 
     p-2 
     flex justify-center items-center flex-wrap
-
+    
     p {
         text-gray-600
     }
+    `
+    
+export const ImageWrapper = tw(motion.div)`
 `
 
-export const ImageWrapper = tw.div`
-`
-
-export const TextWrapper = tw.div`
+export const TextWrapper = tw(motion.div)`
     lg:w-[50%] md:w-[80%] sm:w-[80%] 
     justify-start text-center
 `
 
-export const SocialIconsWrapper = tw.div`
+export const SocialIconsWrapper = tw(motion.div)`
     relative 
     z-10 
     flex items-center justify-between gap-4 
     max-w-[330px] 
     mx-auto
-    mb-8
+    //mb-2
 `
 
-export const BottomInfoWrapper = tw.div`
+export const BottomInfoWrapper = tw(motion.div)`
     relative 
     w-[95%] md:w-[80%]
     max-w-[900px] 
@@ -74,7 +79,7 @@ export const ResumeButtonWrapper = tw.div`
     cursor-pointer 
 
     bg-black text-[tan] 
-    hover:bg-[tan] hover:text-black
+    hover:bg-[tan] hover:text-black shadow-lg shadow-gray-900 ease-in-out duration-300
 
     span {
         relative inline-block w-fit p-4
