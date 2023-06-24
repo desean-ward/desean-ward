@@ -9,20 +9,31 @@ const Skills = () => {
 
   const scaleIn = {
 		initial: { scale: 0 },
-		animate: { scale: 1, transition: { delay: 0.5}}
+		animate: { scale: 1, transition: { delay: 1, duration: 0.5}}
 	}
   
+  const slideUp = {
+		initial: { y: 100, opacity: 0 },
+		animate: { y: 0, opacity: 1, transition: { delay: 1.25, duration: 0.5}}
+	}
+
   return (
     <SkillsContainer id='skills' className=''>
       <SkillsContentWrapper>
-        <p className='section-name'>Skills</p>
-
-        <h2 className='section-title'>What I Can Do</h2>
-
-        <SkillsTechWrapper
-        variants={scaleIn}
+        <motion.section
+        variants={slideUp}
         initial='initial'
         animate='animate'
+        >
+          <p className='section-name'>Skills</p>
+
+          <h2 className='section-title'>What I Can Do</h2>
+        </motion.section>
+
+        <SkillsTechWrapper
+          variants={scaleIn}
+          initial='initial'
+          animate='animate'
         >
         {
           /**

@@ -27,7 +27,7 @@ export const MainWrapper = tw.div`
     p {
         text-gray-600
     }
-    `
+`
     
 export const ImageWrapper = tw(motion.div)`
 `
@@ -39,11 +39,11 @@ export const TextWrapper = tw(motion.div)`
 
 export const SocialIconsWrapper = tw(motion.div)`
     relative 
-    z-10 
+    z-5 
     flex items-center justify-between gap-4 
     max-w-[330px] 
     mx-auto
-    //mb-2
+    mb-8 sm:mb-0
 `
 
 export const BottomInfoWrapper = tw(motion.div)`

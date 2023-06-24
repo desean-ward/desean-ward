@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react'
 
 // NextJS Components
 import Image from 'next/image'
+import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
 // Styled Components
@@ -59,23 +60,23 @@ const Navbar = () => {
 				<ul
 					style={{ color: `${linkColor}` }}
 					className='hidden md:flex text-sm uppercase'>
-					<CustomLink href='#home' scroll={false}>
+					<CustomLink href='/' scroll={false}>
 						<li className='ml-10'>Home</li>
 					</CustomLink>
 
-					<CustomLink href='#about' as='/about' scroll={false}>
+					<CustomLink href='/about' scroll={false}>
 						<li className='ml-10'>About</li>
 					</CustomLink>
 
-					<CustomLink href='#skills' scroll={false}>
+					<CustomLink href='/skills' scroll={false}>
 						<li className='ml-10'>Skills</li>
 					</CustomLink>
 
-					<CustomLink href='#projects' scroll={false}>
+					<CustomLink href='/projects' scroll={false}>
 						<li className='ml-10'>Projects</li>
 					</CustomLink>
 
-					<CustomLink href='#contact' scroll={false}>
+					<CustomLink href='/contact' scroll={false}>
 						<li className='ml-10'>Contact Me</li>
 					</CustomLink>
 				</ul>
@@ -143,7 +144,7 @@ const Navbar = () => {
 					 */}
 					<div className='py-4 flex flex-col'>
 						<ul className='uppercase text-sm'>
-							<CustomLink href='#home' scroll={false}>
+							<CustomLink href='/' as='/home' scroll={false}>
 								<li
 									className='pb-4'
 									onClick={() => setNav(false)}>
@@ -151,7 +152,7 @@ const Navbar = () => {
 								</li>
 							</CustomLink>
 
-							<CustomLink href='#about' scroll={false}>
+							<CustomLink href='/about' scroll={false}>
 								<li
 									className='pb-4'
 									onClick={() => setNav(false)}>
@@ -159,7 +160,7 @@ const Navbar = () => {
 								</li>
 							</CustomLink>
 
-							<CustomLink href='#skills' scroll={false}>
+							<CustomLink href='/skills' scroll={false}>
 								<li
 									className='pb-4'
 									onClick={() => setNav(false)}>
@@ -167,7 +168,7 @@ const Navbar = () => {
 								</li>
 							</CustomLink>
 
-							<CustomLink href='#projects' scroll={false}>
+							<CustomLink href='/projects' scroll={false}>
 								<li
 									className='pb-4'
 									onClick={() => setNav(false)}>
@@ -175,7 +176,7 @@ const Navbar = () => {
 								</li>
 							</CustomLink>
 
-							<CustomLink href='#contact' scroll={false}>
+							<CustomLink href='/contact' scroll={false}>
 								<li
 									className='pb-4'
 									onClick={() => setNav(false)}>
@@ -193,9 +194,14 @@ const Navbar = () => {
 							 * **** Social Media Icons ****
 							 */}
 							<div className='flex items-center justify-between my-4 w-full sm:w-[80%]'>
-								<CustomIconNav>
-									<FaLinkedinIn />
-								</CustomIconNav>
+								<Link
+									href='https://www.linkedin.com/in/desean-ward'
+									target='_blank'
+								>
+									<CustomIconNav>
+										<FaLinkedinIn />
+									</CustomIconNav>
+								</Link>
 
 								<CustomIconNav>
 									<FaGithub />

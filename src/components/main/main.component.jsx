@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import Image from 'next/image'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 import { AiOutlineMail } from 'react-icons/ai'
 import { BsDownload, BsFillPersonLinesFill } from 'react-icons/bs'
@@ -31,32 +32,32 @@ import { motion } from 'framer-motion'
 const Main = () => {
 	const fadeInLeft = {
 		initial: { x: '-100', opacity: 0},
-		animate: { x: 0, opacity: 1, transition: {duration: 0.5}}
+		animate: { x: 0, opacity: 1, transition: {duration: 0.25, delay: 0.5}}
 	}
 	
 	const fadeInRight = {
 		initial: { x: '100', opacity: 0},
-		animate: { x: 0, opacity: 1, transition: {duration: 0.5}}
+		animate: { x: 0, opacity: 1, transition: {duration: 0.25, delay: 0.5}}
 	}
 
 	const fadeUp = {
 		initial: { y: '100', opacity: 0},
-		animate: { y: 0, opacity: 1, transition: {duration: 0.5, delay: 1}}
+		animate: { y: 0, opacity: 1, transition: {duration: 0.5, delay: .75}}
 	}
 
 	const fadeIn = {
 		initial: { opacity: 0 },
-		animate: { opacity: 1 , transition: { duration: 0.5, delay: 0.5 } }
+		animate: { opacity: 1 , transition: { duration: 0.5, delay: 1 } }
 	}
 	
 	const fadeIn2 = {
 		initial: { opacity: 0 },
-		animate: { opacity: 1 , transition: { duration: 0.5, delay: 1.5 } }
+		animate: { opacity: 1 , transition: { duration: 0.5, delay: 1 } }
 	}
 
 	const content = {
 		initial: { opacity: 1 },
-		animate: { opacity: 1, transition: { delayChildren: 0, staggerChildren: 0.05 }}
+		animate: { opacity: 1, transition: { delayChildren: 0.25, staggerChildren: 0.05 }}
 	}
 
 	const singleWord= {
@@ -65,7 +66,7 @@ const Main = () => {
 	}
 
 
-	const text = 'As a skilled full-stack developer, I am dedicated to turning ideas into innovative web applications. Explore my latest projects, showcasing my expertisein React.js and web development.'
+	const text = 'As a skilled full-stack developer, I am dedicated to turning ideas into innovative web applications. Explore my latest projects, showcasing my expertise in React.js and web development.'
 
 	return (
 		<HomeContainer id='home'>

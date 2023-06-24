@@ -15,7 +15,7 @@ const About = () => {
 		animate: {
 			x: 0,
 			opacity: 1,
-			transition: { delay: 0.5, duration: 0.5 },
+			transition: { delay: 0.75, duration: 0.75 },
 		},
 	}
 
@@ -24,9 +24,15 @@ const About = () => {
 		animate: {
 			x: 0,
 			opacity: 1,
-			transition: { delay: 0.5, duration: 0.5 },
+			transition: { delay: 0.75, duration: 0.75 },
 		},
 	}
+
+	const slideUp = {
+		initial: { y: 100, opacity: 0 },
+		animate: { y: 0, opacity: 1, transition: { delay: 1.25, duration: 0.5}}
+	}
+
 
 	return (
 		<AboutContainer id='about'>
@@ -34,14 +40,21 @@ const About = () => {
 			 * *** ABOUT ME CONTENT ***
 			 */}
 			<AboutContentWrapper>
-      <AboutContent
-      variants={fadeInLeft}
-      initial='initial'
-      animate='animate'>
-      <p className='section-name'>About</p>
-			<h2 className='section-title'>Who I Am</h2>
+				<AboutContent
+					variants={fadeInLeft}
+					initial='initial'
+					animate='animate'
+				>
+					<motion.section
+						variants={slideUp}
+						initial='initial'
+						animate='animate'
+					>
+						<p className='section-name'>About</p>
+						<h2 className='section-title'>Who I Am</h2>
+					</motion.section>
 
-      <p>
+      				<p>
 						Since the 8th grade, I&#039;ve always had a knack for
 						technology and working with computers. I began with 4
 						years of courses in high school, computer science

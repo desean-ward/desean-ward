@@ -28,13 +28,16 @@ import { AiOutlineMail } from 'react-icons/ai'
 import { BsFillPersonLinesFill } from 'react-icons/bs'
 import { HiOutlineChevronDoubleUp } from 'react-icons/hi'
 
+import { motion } from 'framer-motion'
+
+
 const Contact = () => {
 	const fadeInLeft = {
 		initial: { x: '-100', opacity: 0 },
 		animate: {
 			x: 0,
 			opacity: 1,
-			transition: { delay: 0.5, duration: 0.5 },
+			transition: { delay: 0.75, duration: 0.75 },
 		},
 	}
 
@@ -43,16 +46,28 @@ const Contact = () => {
 		animate: {
 			x: 0,
 			opacity: 1,
-			transition: { delay: 0.5, duration: 0.5 },
+			transition: { delay: 0.75, duration: 0.75 },
 		},
+	}
+
+	const slideUp = {
+		initial: { y: 100, opacity: 0 },
+		animate: { y: 0, opacity: 1, transition: { delay: 1.25, duration: 0.5}}
 	}
 
 	return (
 		<ContactContainer id='contact'>
 			<div>
 				<ContactWrapper>
-					<p className='section-name'> Contact </p>
-					<h2 className='section-title'> Get In Touch </h2>
+					<motion.section
+						variants={slideUp}
+						initial='initial'
+						animate='animate'
+					>
+						<p className='section-name'> Contact </p>
+						<h2 className='section-title'> Get In Touch </h2>
+					</motion.section>
+
 					<ContentWrapper>
 						
 						{/* left side */}
@@ -90,9 +105,14 @@ const Contact = () => {
 
 									{/* Social Icons */}
 									<SocialIcons>
-										<CustomIcon>
-											<FaLinkedinIn />
-										</CustomIcon>
+										<Link
+											href='https://www.linkedin.com/in/desean-ward'
+											target='_blank'
+										>
+											<CustomIcon>
+												<FaLinkedinIn />
+											</CustomIcon>
+										</Link>
 
 										<CustomIcon>
 											<FaGithub />

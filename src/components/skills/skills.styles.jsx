@@ -5,13 +5,13 @@ import { motion } from 'framer-motion'
 export const SkillsContainer = tw.div`
     w-full
     relative
-    mt-[8em] sm:top-0
+    mt-[5em] sm:mt-0
     p-2 
-    pt-[5em] sm:pt-0
+    //pt-[5em] sm:pt-0
     md:h-screen 
 `
 
-export const SkillsContentWrapper = tw.div`
+export const SkillsContentWrapper = tw(motion.div)`
     max-w-[1240px] 
     mx-auto 
     flex flex-col justify-center 

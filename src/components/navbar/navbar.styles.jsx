@@ -5,8 +5,8 @@ import tw from 'tailwind-styled-components';
 export const NavContainer = tw.div`
     {
         ${p => p.shadow 
-        ? 'fixed w-full h-20 bg-[{navBg}] shadow-xl z-[100]' 
-        : 'fixed w-full h-20 bg-[{navBg}] z-[100]'
+        ? 'fixed w-full h-20 bg-[{navBg}] top-0 shadow-xl z-[100]' 
+        : 'fixed w-full h-20 bg-[{navBg}] top-0 z-[100]'
     }
 `
 

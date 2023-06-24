@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 import tw from 'tailwind-styled-components'
 
-export const PageContainer = tw.div`
+import { motion } from 'framer-motion'
+
+export const PageContainer = tw(motion.div)`
     w-full
 `
 

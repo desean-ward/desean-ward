@@ -26,7 +26,11 @@ import CustomLink from '@/components/customs/custom-link.component'
 
 const dwfazhionz = () => {
 	return (
-		<PageContainer>
+		<PageContainer
+			initial={{ opacity: 0 }}
+			animate={{ opacity: 1 }}
+			transition={{ duration: 0.5 }}
+		>
 			<HeaderWrapper>
 				<HeaderOverlay />
 				<Image
@@ -47,7 +51,7 @@ const dwfazhionz = () => {
 					<p className='mb-2'>Project</p>
 					<h2 className='mb-2'>Overview</h2>
 					<p>
-						This application was built using React JS and Firebase.
+						This full-stack application was built using React JS and Firebase.
 						Users are able to search clothing categories, view a
 						product&#039;s description, add to a shopping bag, and
 						checkout with credit card information via the Stripe
@@ -74,7 +78,7 @@ const dwfazhionz = () => {
 					
 					 */}
 					<ProjectsBtn>
-						<CustomLink href='/#projects' scroll={false}>
+						<CustomLink href='/projects' scroll={false}>
 							<HiOutlineChevronDoubleLeft className='inline-block mr-2' />
 							<span className='inline-block '>Projects</span>
 						</CustomLink>
