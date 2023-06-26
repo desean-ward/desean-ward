@@ -68,20 +68,20 @@ const TransitionEffect = () => {
 		}
 			
 		firstVisit()
-		}, [])
+	}, [])
 		
-		/**
-		 * Controls the page transition slide effect
-		 */
-		useEffect(() => {
-			const startSlide = async () => {
-				if (isInView && !firstLoad) {
-				console.log('FIRST LOAD 2?: ' + path + ' - ' + firstLoad)
+	/**
+	 * Controls the page transition slide effect
+	 */
+	useEffect(() => {
+		const startSlide = async () => {
+			if (isInView && !firstLoad) {
 				await controls.start('show')
 				await controls.start('hide')
 			}
 		}
-		startSlide()
+
+		startSlide()	
 	}, [controls, isInView])
 
 	return (
@@ -91,23 +91,18 @@ const TransitionEffect = () => {
 				className='fixed top-0 bottom-0 right-full w-screen h-screen z-30 bg-[tan]'
 				variants={variants1}
 				animate={controls}
-				//transition={{ delay: 0.3, duration: 1.5, ease: 'easeInOut' }}
 			/>
 
 			<motion.div
-				//ref={ref}
 				className='fixed top-0 bottom-0 right-full w-screen h-screen z-20 bg-gray-400'
 				variants={variants2}
 				animate={controls}
-				//transition={{ delay: 0.5, duration: 0.5, ease: 'easeInOut' }}
 			/>
 
 			<motion.div
-				//ref={ref}
 				className='fixed top-0 bottom-0 right-full w-screen h-screen z-10 bg-[black]'
 				variants={variants3}
 				animate={controls}
-				//transition={{ delay: 0.7, duration: 0.5, ease: 'easeInOut' }}
 			/>
 		</>
 	)

@@ -1,5 +1,9 @@
 import React from 'react'
+
+import Link from 'next/link'
+
 import { CustomImage } from '../customs/custom-image.component'
+
 import {
 	AboutContainer,
 	AboutContentWrapper,
@@ -69,10 +73,10 @@ const About = () => {
 						afforded me excellent problem-solving skills.
 					</p>
 
-					<p className='underline cursor-pointer font-bold hover:text-[tan]'>
-						<a href='#projects'>
+					<p>
+						<Link href='/projects' className='underline cursor-pointer font-bold hover:text-[tan]'>
 							Check out some of my latest projects.
-						</a>
+						</Link>
 					</p>
 				</AboutContent>
 

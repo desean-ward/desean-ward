@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 
 export const ContactContainer = tw.div`
     w-full
-    h-fit 
+    h-screen 
 `
 
 export const ContactWrapper = tw.div`
@@ -17,7 +17,7 @@ export const ContactWrapper = tw.div`
 
 export const ContentWrapper = tw.div`
     grid lg:grid-cols-5 gap-8
-    w-[70%]
+    md:w-[80%]
     m-auto
 `
 
