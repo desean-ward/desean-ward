@@ -1,11 +1,10 @@
 ![Full Stack Developer](https://www.desean-ward.me/assets/desean-ward.png)
-###  **De Sean Ward**
-#### Full Stack Developer
+#  **De Sean Ward**
+## Full Stack Developer
 
+I made this project just for fun, it allows you to create nice and simple GitHub Readme files that you can copy/paste and use in your profile.
 
-## I made this project just for fun, it allows you to create nice and simple GitHub Readme files that you can copy/paste and use in your profile.
-
-Skills: REACT / JS / HTML / CSS
+## Skills: REACT / JS / HTML / CSS
 
 ## Getting Started
 
