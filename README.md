@@ -1,39 +1,9 @@
 ![Full Stack Developer](https://www.desean-ward.me/assets/desean-ward.png)
-#  **De Sean Ward** Full Stack Software Engineer
+#  **De Sean Ward** 
+Full Stack Software Engineer
 
-I made this project just for fun, it allows you to create nice and simple GitHub Readme files that you can copy/paste and use in your profile.
+Hello, I'm a software engineer, dedicated to showcase my work and seize exciting freelance or professional opportunities. My passion lies in exploring innovative solutions and solving complex problems through the art of coding. With an eye for detail and a commitment to excellence, I have built a portfolio that encompasses diverse projects, ranging from dynamic web applications to user-friendly mobile experiences. Proficient in programming languages, frameworks, and industry standards, I possess the expertise to develop robust and scalable software tailored to specific requirements. Continual learning is my driving force, as I am dedicated to staying abreast of the latest trends and advancements in the field. With an unwavering enthusiasm for my craft and an insatiable curiosity, I am ready to take on new challenges and leave a lasting impact in the realm of technology.
 
 ## Skills: REACT / JS / HTML / CSS
 
-## Getting Started
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
