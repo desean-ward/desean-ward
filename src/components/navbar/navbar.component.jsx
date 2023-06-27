@@ -196,8 +196,7 @@ const Navbar = () => {
 							<div className='flex items-center justify-between my-4 w-full sm:w-[80%]'>
 								<Link
 									href='https://www.linkedin.com/in/desean-ward'
-									target='_blank'
-								>
+									target='_blank'>
 									<CustomIconNav>
 										<FaLinkedinIn />
 									</CustomIconNav>

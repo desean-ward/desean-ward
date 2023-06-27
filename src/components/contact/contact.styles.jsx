@@ -22,14 +22,11 @@ export const ContentWrapper = tw.div`
 `
 
 export const LeftSide = tw(motion.div)`
-    //hidden 
-    //md:block 
     col-span-3 
     lg:col-span-2 
     h-full 
     shadow-xl shadow-gray-400 
     rounded-xl 
-    p-4
 `
 
 export const LeftSideWrapper = tw.div`

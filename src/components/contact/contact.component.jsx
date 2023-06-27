@@ -79,7 +79,7 @@ const Contact = () => {
 							<LeftSideWrapper>
 								<div>
 									<Image
-										className='w-full rounded-xl'
+										className='w-full rounded-xl hidden md:block'
 										width='300'
 										src={contact}
 										alt='/'
@@ -92,8 +92,7 @@ const Contact = () => {
 									</h2>
 									<p> Front - End Developer </p>
 									<p className='py-4'>
-										I am available for freelance or full -
-										time positions.Contact me and let&#039;s
+										I am available for freelance or full-time positions. Contact me and let&#039;s
 										talk.
 									</p>
 								</div>
