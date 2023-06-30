@@ -1,18 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
-import Image from 'next/image'
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import Image from 'next/image';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
-import { AiOutlineMail } from 'react-icons/ai'
-import { BsDownload, BsFillPersonLinesFill } from 'react-icons/bs'
-import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
-import { CustomIcon } from '../customs/custom-icon.component'
+import { AiOutlineMail } from 'react-icons/ai';
+import { BsDownload, BsFillPersonLinesFill } from 'react-icons/bs';
+import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
+import { CustomIcon } from '../customs/custom-icon.component';
 
 import {
 	CustomImage,
 	CustomImageRound,
-} from '../customs/custom-image.component'
+} from '../customs/custom-image.component';
 
 import {
 	CircularText,
@@ -25,48 +25,63 @@ import {
 	BottomInfoWrapper,
 	InitialsWrapper,
 	ResumeButtonWrapper,
-} from './main.styles'
+} from './main.styles';
 
-import { motion } from 'framer-motion'
+import { motion } from 'framer-motion';
 
 const Main = () => {
 	const fadeInLeft = {
-		initial: { x: '-100', opacity: 0},
-		animate: { x: 0, opacity: 1, transition: {duration: 0.25, delay: 0.5}}
-	}
-	
+		initial: { x: '-100', opacity: 0 },
+		animate: {
+			x: 0,
+			opacity: 1,
+			transition: { duration: 0.25, delay: 0.5 },
+		},
+	};
+
 	const fadeInRight = {
-		initial: { x: '100', opacity: 0},
-		animate: { x: 0, opacity: 1, transition: {duration: 0.25, delay: 0.5}}
-	}
+		initial: { x: '100', opacity: 0 },
+		animate: {
+			x: 0,
+			opacity: 1,
+			transition: { duration: 0.25, delay: 0.5 },
+		},
+	};
 
 	const fadeUp = {
-		initial: { y: '100', opacity: 0},
-		animate: { y: 0, opacity: 1, transition: {duration: 0.5, delay: .75}}
-	}
+		initial: { y: '100', opacity: 0 },
+		animate: {
+			y: 0,
+			opacity: 1,
+			transition: { duration: 0.5, delay: 0.75 },
+		},
+	};
 
 	const fadeIn = {
 		initial: { opacity: 0 },
-		animate: { opacity: 1 , transition: { duration: 0.5, delay: 1 } }
-	}
-	
+		animate: { opacity: 1, transition: { duration: 0.5, delay: 1 } },
+	};
+
 	const fadeIn2 = {
 		initial: { opacity: 0 },
-		animate: { opacity: 1 , transition: { duration: 0.5, delay: 1 } }
-	}
+		animate: { opacity: 1, transition: { duration: 0.5, delay: 1 } },
+	};
 
 	const content = {
 		initial: { opacity: 1 },
-		animate: { opacity: 1, transition: { delayChildren: 0.25, staggerChildren: 0.05 }}
-	}
+		animate: {
+			opacity: 1,
+			transition: { delayChildren: 0.25, staggerChildren: 0.05 },
+		},
+	};
 
-	const singleWord= {
+	const singleWord = {
 		initial: { opacity: 0 },
-		animate: { opacity: 1 }
-	}
+		animate: { opacity: 1 },
+	};
 
-
-	const text = 'As a skilled full-stack developer, I am dedicated to turning ideas into innovative web applications. Explore my latest projects, showcasing my expertise in React.js and web development.'
+	const text =
+		'As a skilled Full Stack Software Engineer, I am dedicated to turning ideas into innovative web applications. Explore my latest projects, showcasing my expertise in React.js and web development.';
 
 	return (
 		<HomeContainer id='home'>
@@ -80,10 +95,9 @@ const Main = () => {
 					 */}
 
 					<ImageWrapper
-					 variants={fadeInLeft}
-					 initial='initial'
-					 animate='animate'
-					>
+						variants={fadeInLeft}
+						initial='initial'
+						animate='animate'>
 						<CustomImageRound>
 							<Image
 								src='/assets/portfolio-pic-tp.png'
@@ -99,20 +113,18 @@ const Main = () => {
 					 * ********** TEXT **********
 					 */}
 					<TextWrapper
-					 variants={fadeInRight}
-					 initial='initial'
-					 animate='animate'
-					>
+						variants={fadeInRight}
+						initial='initial'
+						animate='animate'>
 						<p className='uppercase text-sm tracking-widest'>
 							Let&#039;s build solutions!
 						</p>
 
 						<motion.h1
-					 		variants={fadeIn}
+							variants={fadeIn}
 							initial='initial'
 							animate='animate'
-							className='py-4 text-gray-700'
-						>
+							className='py-4 text-gray-700'>
 							Hi, I&#039;m{' '}
 							<span className='text-[tan] text-shadow-lg shadow-gray-900'>
 								{' '}
@@ -121,27 +133,23 @@ const Main = () => {
 						</motion.h1>
 
 						<motion.h2 className='py-2 text-gray-700'>
-							Front-End Web Developer
+							Full Stack Software Engineer
 						</motion.h2>
 
-							<motion.p
-								variants={content}
-								initial='initial'
-								animate='animate'
-								className='py-4'
-							>
-								{
-									text.split(" ").map((word, index) => 
-										<motion.span 
-											key={word + '-' + index} 
-											className='inline-block'
-											variants={singleWord}
-											>{
-												word}&nbsp;
-										</motion.span>
-									)
-								}
-							</motion.p>
+						<motion.p
+							variants={content}
+							initial='initial'
+							animate='animate'
+							className='py-4'>
+							{text.split(' ').map((word, index) => (
+								<motion.span
+									key={word + '-' + index}
+									className='inline-block'
+									variants={singleWord}>
+									{word}&nbsp;
+								</motion.span>
+							))}
+						</motion.p>
 					</TextWrapper>
 				</IntroWrapper>
 
@@ -149,10 +157,9 @@ const Main = () => {
 				 * ********** SOCIAL MEDIA ICONS **********
 				 */}
 				<SocialIconsWrapper
-				 variants={fadeUp}
-				 initial='initial'
-				 animate='animate'
-				>
+					variants={fadeUp}
+					initial='initial'
+					animate='animate'>
 					<Link
 						href='https://www.linkedin.com/in/desean-ward'
 						target='_blank'>
@@ -160,10 +167,14 @@ const Main = () => {
 							<FaLinkedinIn />
 						</CustomIcon>
 					</Link>
-
-					<CustomIcon className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300'>
-						<FaGithub />
-					</CustomIcon>
+					
+					<Link
+						href='https://www.github.com/desean-ward'
+						target='_blank'>
+						<CustomIcon className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300'>
+							<FaGithub />
+						</CustomIcon>
+					</Link>
 
 					<CustomIcon className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300'>
 						<AiOutlineMail />
@@ -180,8 +191,7 @@ const Main = () => {
 				<BottomInfoWrapper
 					variants={fadeIn2}
 					initial='initial'
-					animate='animate'
-				>
+					animate='animate'>
 					<CircularText>
 						<Image
 							src='/assets/svg/circular-text.png'
@@ -205,7 +215,7 @@ const Main = () => {
 					 * **** RESUME BUTTON ****
 					 */}
 					<ResumeButtonWrapper>
-						<Link href='#' download className=''>
+						<Link href='/files/desean-ward.docx' download target='_blank'>
 							<span className=''>
 								Resume
 								<BsDownload
@@ -218,7 +228,7 @@ const Main = () => {
 				</BottomInfoWrapper>
 			</MainWrapper>
 		</HomeContainer>
-	)
-}
+	);
+};
 
-export default Main
+export default Main;

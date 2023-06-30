@@ -16,11 +16,10 @@ import { NavContainer, NavLink, NavWrapper } from './navbar.styles'
 
 const Navbar = () => {
 	const [nav, setNav] = useState(false)
-	const [shadow, setShadow] = useState(false)
+	const [navShadow, setNavShadow] = useState('false')
 	const [navBg, setNavBg] = useState('#ecf0f3')
 	const [linkColor, setLinkColor] = useState('text-gray-700')
 	const pathname = usePathname()
-
 	useEffect(() => {
 		if (pathname.match('/projects/')) {
 			setNavBg('transparent')
@@ -38,16 +37,16 @@ const Navbar = () => {
 	useEffect(() => {
 		const handleShadow = () => {
 			if (window.scrollY >= 90) {
-				setShadow(true)
+				setNavShadow('true')
 			} else {
-				setShadow(false)
+				setNavShadow('false')
 			}
 		}
 		window.addEventListener('scroll', handleShadow)
 	}, [])
-
+	
 	return (
-		<NavContainer shadow={shadow} style={{ backgroundColor: `${navBg}` }}>
+		<NavContainer doshadow={navShadow} style={{ backgroundColor: `${navBg}` }}>
 			<NavWrapper>
 				{/**
 				 * ********** LOGO **********
@@ -196,15 +195,21 @@ const Navbar = () => {
 							<div className='flex items-center justify-between my-4 w-full sm:w-[80%]'>
 								<Link
 									href='https://www.linkedin.com/in/desean-ward'
-									target='_blank'>
+									target='_blank'
+								>
 									<CustomIconNav>
 										<FaLinkedinIn />
 									</CustomIconNav>
 								</Link>
 
-								<CustomIconNav>
-									<FaGithub />
-								</CustomIconNav>
+								<Link
+									href='https://www.github.com/desean-ward'
+									target='_blank'
+								>
+									<CustomIconNav>
+										<FaGithub />
+									</CustomIconNav>
+								</Link>
 
 								<CustomIconNav>
 									<AiOutlineMail />

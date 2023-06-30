@@ -6,6 +6,8 @@ import { ProjectsContainer, ProjectsContentWrapper, ProjectsWrapper } from './pr
 
 import dwFazhionz from '../../../public/assets/projects/dw-fazhionz.jpg'
 
+import comingsoon from '../../../public/assets/projects/coming-soon.png'
+
 import { motion } from 'framer-motion'
 
 
@@ -40,22 +42,22 @@ const Projects = () => {
                     {/**
                         * *** D.W. FAZHIONZ ***
                     */}
-                     <ProjectItem img={dwFazhionz} title='D.W. Fazhionz!' text='A fashion e-Commerce website built with React and Firebase.' page='/projects/dwfazhionz' />
+                    <ProjectItem img={dwFazhionz} title='D.W. Fazhionz!' text='A fashion e-Commerce website built with React and Firebase.' page='/projects/dwfazhionz' />
 
                 {/**
                      * *** D.W. FAZHIONZ ***
                  */}
-                    <ProjectItem img={dwFazhionz} title='D.W. Fazhionz!' text='A fashion e-Commerce website built with React and Firebase.' page='/#projects' />
+                 <ProjectItem img={comingsoon} title='Stay Tuned' text='Coming Soon' page='/projects' />
             
                 {/**
                     * *** D.W. FAZHIONZ ***
                  */}
-                    <ProjectItem img={dwFazhionz} title='D.W. Fazhionz!' text='A fashion e-Commerce website built with React and Firebase.' page='/#projects' />
+                 <ProjectItem img={comingsoon} title='Stay Tuned' text='Coming Soon' page='/projects' />
 
                 {/**
                     * *** D.W. FAZHIONZ ***
                  */}
-                    <ProjectItem img={dwFazhionz} title='D.W. Fazhionz!' text='A fashion e-Commerce website built with React and Firebase.' page='/#projects' />
+                 <ProjectItem img={comingsoon} title='Stay Tuned' text='Coming Soon' page='/projects' />
                </ProjectsWrapper>
             </ProjectsContentWrapper>
         </ProjectsContainer>  

@@ -30,7 +30,7 @@ export const LeftSide = tw(motion.div)`
 `
 
 export const LeftSideWrapper = tw.div`
-    lg:p-4 
+    p-4 
     h-full
 `
 
@@ -50,12 +50,14 @@ export const RightSide = tw(motion.div)`
 
 export const FormWrapper = tw.div`
     p-4
+
+    
 `
 
 export const NamePhoneWrapper = tw.div`
     grid md:grid-cols-2 gap-4 
     w-full
-    py-2
+    py-2 bg-red
 `
 
 export const Field = tw.section`
@@ -67,7 +69,7 @@ export const Field = tw.section`
 `
 
 export const Input = tw.input`
-    border-2 rounded-lg p-3 border-gray-300 focus:outline-none 
+border-2 rounded-lg p-3 border-gray-300 focus:outline-none 
 `
 export const TextArea = tw.textarea`
     border-2 rounded-lg p-3 border-gray-300 focus:outline-none resize-none

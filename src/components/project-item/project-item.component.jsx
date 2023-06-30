@@ -57,6 +57,7 @@ const ProjectItem = ({ key, img, title, text, page }) => {
 							{/**
 							 * *** MORE INFO BUTTON***
 							 */}
+							{/* Get the screen width for media queery */}
 							<ButtonContainer screen={thisScreen}>
 								<Link href={page}>
 									<p>More Info</p>

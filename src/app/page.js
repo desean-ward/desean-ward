@@ -1,7 +1,6 @@
-'use client'
-import Main from '@/components/main/main.component'
-import TransitionEffect from '@/components/transition-effect/transition-effect.component'
-
+'use client';
+import Main from '@/components/main/main.component';
+import TransitionEffect from '@/components/transition-effect/transition-effect.component';
 
 export default function Home() {
 	return (
@@ -9,5 +8,5 @@ export default function Home() {
 			<TransitionEffect />
 			<Main />
 		</main>
-	)
+	);
 }

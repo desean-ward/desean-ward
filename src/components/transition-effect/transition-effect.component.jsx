@@ -63,8 +63,9 @@ const TransitionEffect = () => {
 	 */
 	useEffect(() => {
 		const firstVisit = () => {
-			if (path !== '/' && firstLoad) setFirstLoad(false)
+			if (path !== '/' && firstLoad === true) setFirstLoad(false)
 		}
+		
 		firstVisit()
 	}, [])
 		
