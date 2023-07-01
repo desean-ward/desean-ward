@@ -3,7 +3,7 @@ const nodemailer = require('nodemailer');
 
 //const router = express.Router();
 
-export default async function handler(req, res) {
+export default function handler(req, res) {
 	const { name, phone, email, subject, message } = req.searchParams;
 
 	//! *********************** */
@@ -31,22 +31,24 @@ export default async function handler(req, res) {
 
 	try {
 		// SEND EMAIL
-		let info = await transporter.sendMail({
-			from: `My Contact Form <${process.env.EMAIL_USER}>`,
+		let info = transporter.sendMail({
+			from: `"My Contact Form" <${process.env.EMAIL_USER}>`,
 			fromName: name,
 			replyTo: `${name} <${email}>`,
 			to: process.env.EMAIL_USER,
-			subject: subject,
+			subject: `Contact Form: ${subject}`,
 			html: `
-			        Name: ${name}<br />
+					Name: ${name}<br />
 					Phone: ${phone}<br />
-					Email: ${email}<br /><br />
+					Email: <b>${email}</b>
 					
-					Message: ${message}
+					<p><b>Re: ${subject}</b></p>
+
+					<p>${message}</p>
 			    `,
 		});
 
-		console.log('Success:  %s', info.messageId);
+		console.log('Success:  %s', info.message);
 	} catch (error) {
 		console.log('Unsuccessful: ', JSON.stringify(error));
 	}

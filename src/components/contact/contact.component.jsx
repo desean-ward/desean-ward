@@ -333,7 +333,7 @@ const Contact = () => {
 
 									<button
 										type='submit'
-										className='w-full p-4 text-gray-900 mt-4'>
+										className='w-full p-4 bg-[tan] text-gray-900 mt-4'>
 										Send Message
 									</button>
 								</form>
