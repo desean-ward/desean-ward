@@ -256,10 +256,13 @@ const Contact = () => {
 												<FaGithub />
 											</CustomIcon>
 										</Link>
-
+										
+										<Link
+											href='/contact'>
 										<CustomIcon>
 											<AiOutlineMail />
 										</CustomIcon>
+										</Link>
 
 										<CustomIcon>
 											<BsFillPersonLinesFill />
