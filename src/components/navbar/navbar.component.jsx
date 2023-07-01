@@ -1,52 +1,54 @@
-'use client'
-import React, { useState, useEffect } from 'react'
+'use client';
+import React, { useState, useEffect } from 'react';
 
 // NextJS Components
-import Image from 'next/image'
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import Image from 'next/image';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 // Styled Components
-import { AiOutlineMenu, AiOutlineClose, AiOutlineMail } from 'react-icons/ai'
-import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
-import { BsFillPersonLinesFill } from 'react-icons/bs'
-import { CustomIcon, CustomIconNav } from '../customs/custom-icon.component'
-import CustomLink from '../customs/custom-link.component'
-import { NavContainer, NavLink, NavWrapper } from './navbar.styles'
+import { AiOutlineMenu, AiOutlineClose, AiOutlineMail } from 'react-icons/ai';
+import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
+import { BsFillPersonLinesFill } from 'react-icons/bs';
+import { CustomIcon, CustomIconNav } from '../customs/custom-icon.component';
+import CustomLink from '../customs/custom-link.component';
+import { NavContainer, NavLink, NavWrapper } from './navbar.styles';
 
 const Navbar = () => {
-	const [nav, setNav] = useState(false)
-	const [navShadow, setNavShadow] = useState('false')
-	const [navBg, setNavBg] = useState('#ecf0f3')
-	const [linkColor, setLinkColor] = useState('text-gray-700')
-	const pathname = usePathname()
+	const [nav, setNav] = useState(false);
+	const [navShadow, setNavShadow] = useState('false');
+	const [navBg, setNavBg] = useState('#ecf0f3');
+	const [linkColor, setLinkColor] = useState('text-gray-700');
+	const pathname = usePathname();
 	useEffect(() => {
 		if (pathname.match('/projects/')) {
-			setNavBg('transparent')
-			setLinkColor('#ecf0f3')
+			setNavBg('transparent');
+			setLinkColor('#ecf0f3');
 		} else {
-			setNavBg('#ecf0f3')
-			setLinkColor('#000000')
+			setNavBg('#ecf0f3');
+			setLinkColor('#000000');
 		}
-	}, [pathname])
+	}, [pathname]);
 
 	const handleNav = () => {
-		setNav(!nav)
-	}
+		setNav(!nav);
+	};
 
 	useEffect(() => {
 		const handleShadow = () => {
 			if (window.scrollY >= 90) {
-				setNavShadow('true')
+				setNavShadow('true');
 			} else {
-				setNavShadow('false')
+				setNavShadow('false');
 			}
-		}
-		window.addEventListener('scroll', handleShadow)
-	}, [])
-	
+		};
+		window.addEventListener('scroll', handleShadow);
+	}, []);
+
 	return (
-		<NavContainer doshadow={navShadow} style={{ backgroundColor: `${navBg}` }}>
+		<NavContainer
+			doshadow={navShadow}
+			style={{ backgroundColor: `${navBg}` }}>
 			<NavWrapper>
 				{/**
 				 * ********** LOGO **********
@@ -195,8 +197,7 @@ const Navbar = () => {
 							<div className='flex items-center justify-between my-4 w-full sm:w-[80%]'>
 								<Link
 									href='https://www.linkedin.com/in/desean-ward'
-									target='_blank'
-								>
+									target='_blank'>
 									<CustomIconNav>
 										<FaLinkedinIn />
 									</CustomIconNav>
@@ -204,16 +205,17 @@ const Navbar = () => {
 
 								<Link
 									href='https://www.github.com/desean-ward'
-									target='_blank'
-								>
+									target='_blank'>
 									<CustomIconNav>
 										<FaGithub />
 									</CustomIconNav>
 								</Link>
 
-								<CustomIconNav>
-									<AiOutlineMail />
-								</CustomIconNav>
+								<Link href='/contact'>
+									<CustomIconNav>
+										<AiOutlineMail />
+									</CustomIconNav>
+								</Link>
 
 								<CustomIconNav>
 									<BsFillPersonLinesFill />
@@ -224,7 +226,7 @@ const Navbar = () => {
 				</div>
 			</div>
 		</NavContainer>
-	)
-}
+	);
+};
 
-export default Navbar
+export default Navbar;

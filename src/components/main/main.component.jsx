@@ -167,7 +167,7 @@ const Main = () => {
 							<FaLinkedinIn />
 						</CustomIcon>
 					</Link>
-					
+
 					<Link
 						href='https://www.github.com/desean-ward'
 						target='_blank'>
@@ -176,9 +176,11 @@ const Main = () => {
 						</CustomIcon>
 					</Link>
 
-					<CustomIcon className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300'>
-						<AiOutlineMail />
-					</CustomIcon>
+					<Link href='/contact'>
+						<CustomIcon className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300'>
+							<AiOutlineMail />
+						</CustomIcon>
+					</Link>
 
 					<CustomIcon className='rounded-full bg-white shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300'>
 						<BsFillPersonLinesFill />
@@ -215,7 +217,10 @@ const Main = () => {
 					 * **** RESUME BUTTON ****
 					 */}
 					<ResumeButtonWrapper>
-						<Link href='/files/desean-ward.docx' download target='_blank'>
+						<Link
+							href='/files/desean-ward.docx'
+							download
+							target='_blank'>
 							<span className=''>
 								Resume
 								<BsDownload
