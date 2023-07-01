@@ -5,13 +5,7 @@ const nodemailer = require('nodemailer');
 
 export default function handler(req, res) {
 	const { name, phone, email, subject, message } = req.searchParams;
-
-	//! *********************** */
-	console.log(name + ' ' + email);
-	console.log(process.env.EMAIL_USER);
-	console.log(process.env.EMAIL_PASSWORD);
-	//! ********************** */
-
+	
 	/**
 	 * **** CREATE THE TRANSPORTER ****
 	 */
