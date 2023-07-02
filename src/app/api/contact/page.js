@@ -5,7 +5,7 @@ const nodemailer = require('nodemailer');
 
 export default function handler(req, res) {
 	const { name, phone, email, subject, message } = req.searchParams;
-
+	console.log(process.env.NEXT_PUBLIC_EMAIL_USER)
 	/**
 	 * **** CREATE THE TRANSPORTER ****
 	 */
@@ -42,9 +42,9 @@ export default function handler(req, res) {
 			    `,
 		});
 
-		console.log('Success:  %s', info.message);
+		console.log('Success:  %s');
 	} catch (error) {
-		console.log('Unsuccessful: ', JSON.stringify(error));
+		console.log('Unsuccessful: ', JSON.stringify(error.message));
 	}
 	//}
 }
