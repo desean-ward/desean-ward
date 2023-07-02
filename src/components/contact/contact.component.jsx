@@ -120,14 +120,18 @@ const Contact = () => {
 
 	const sendEmail = async () => {
 		try {
-			await axios({
+			const sent = await axios({
 				method: 'post',
 				url: '/api/contact',
 				params: formValues,
 			});
 
-			setFormValues(initialValues)
-			console.log('Email sent!');
+			if (sent.statusText === 'OK') {
+				setFormValues(initialValues);
+				console.log('Email sent!');
+			} else {
+				console.log(`Email not sent!, ${sent.status}`)
+			}
 		} catch (error) {
 			console.log('Email send error: ', error);
 		}
@@ -255,12 +259,11 @@ const Contact = () => {
 												<FaGithub />
 											</CustomIcon>
 										</Link>
-										
-										<Link
-											href='/contact'>
-										<CustomIcon>
-											<AiOutlineMail />
-										</CustomIcon>
+
+										<Link href='/contact'>
+											<CustomIcon>
+												<AiOutlineMail />
+											</CustomIcon>
 										</Link>
 
 										<CustomIcon>

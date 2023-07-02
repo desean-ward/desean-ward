@@ -1,11 +1,14 @@
 'use strict'
+
+import { FaPencilRuler } from 'react-icons/fa';
+
 const nodemailer = require('nodemailer');
 
 //const router = express.Router();
 
 export default function handler(req, res) {
 	const { name, phone, email, subject, message } = req.searchParams;
-	console.log(process.env.EMAIL_USER)
+
 	/**
 	 * **** CREATE THE TRANSPORTER ****
 	 */
@@ -41,10 +44,12 @@ export default function handler(req, res) {
 					<p>${message}</p>
 			    `,
 		});
-
-		console.log('Success:  %s');
+		
+		console.log(`INFO: ${info.response}`)
+		return 'success';
+		
 	} catch (error) {
-		console.log('Unsuccessful: ', JSON.stringify(error.message));
+		return 'fail'
 	}
 	//}
 }
