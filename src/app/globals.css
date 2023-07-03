@@ -42,6 +42,10 @@ html {
     @apply cursor-pointer shadow-xl shadow-gray-400 rounded-xl uppercase bg-[tan] text-black hover:bg-[black] hover:text-[tan] 
     ease-in-out duration-300 
   }
+ 
+  input.input-error {
+    @apply border-red-900 border-2 
+  }
 
 
 

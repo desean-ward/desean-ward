@@ -1,14 +1,13 @@
-'use strict'
+'use strict';
 
 import { FaPencilRuler } from 'react-icons/fa';
 
 const nodemailer = require('nodemailer');
 
 //const router = express.Router();
-
+console.log(process.env.NEXT_PUBLIC_EMAIL_USER);
 export default function handler(req, res) {
 	const { name, phone, email, subject, message } = req.searchParams;
-
 	/**
 	 * **** CREATE THE TRANSPORTER ****
 	 */
@@ -17,8 +16,8 @@ export default function handler(req, res) {
 		port: 465,
 		secure: true,
 		auth: {
-			user: process.env.EMAIL_USER,
-			pass: process.env.EMAIL_PASSWORD,
+			user: process.env.NEXT_PUBLIC_EMAIL_USER,
+			pass: process.env.NEXT_PUBLIC_EMAIL_PASSWORD,
 		},
 		tls: {
 			// do not fail on invalid certs
@@ -29,10 +28,10 @@ export default function handler(req, res) {
 	try {
 		// SEND EMAIL
 		let info = transporter.sendMail({
-			from: `"My Contact Form" <${process.env.EMAIL_USER}>`,
+			from: `"My Contact Form" <${process.env.NEXT_PUBLIC_EMAIL_USER}>`,
 			fromName: name,
 			replyTo: `${name} <${email}>`,
-			to: process.env.EMAIL_USER,
+			to: process.env.NEXT_PUBLIC_EMAIL_USER,
 			subject: `Contact Form: ${subject}`,
 			html: `
 					Name: ${name}<br />
@@ -44,12 +43,11 @@ export default function handler(req, res) {
 					<p>${message}</p>
 			    `,
 		});
-		
-		console.log(`INFO: ${info.response}`)
+
+		console.log(`INFO: ${info.response}`);
 		return 'success';
-		
 	} catch (error) {
-		return 'fail'
+		return 'fail';
 	}
 	//}
 }

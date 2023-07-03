@@ -54,7 +54,7 @@ const Contact = () => {
 	const [emailHighlight, setEmailHighlight] = useState(false);
 	const [subjectHighlight, setSubjectHighlight] = useState(false);
 	const [messageHighlight, setMessageHighlight] = useState(false);
-
+	const user = process.env.NEXT_PUBLIC_EMAIL_USER
 	/**
 	 * **** Email Regex Validation ****
 	 */
@@ -128,9 +128,9 @@ const Contact = () => {
 
 			if (sent.statusText === 'OK') {
 				setFormValues(initialValues);
-				console.log('Email sent!');
+				console.log(`Email sent!:  ${user}`);
 			} else {
-				console.log(`Email not sent!, ${sent.status}`)
+				console.log(`Email not sent!, ${sent.status}`);
 			}
 		} catch (error) {
 			console.log('Email send error: ', error);
@@ -285,6 +285,7 @@ const Contact = () => {
 										<Field>
 											<label>Name </label>
 											<Input
+												className=''
 												type='text'
 												name='name'
 												value={formValues.name}
