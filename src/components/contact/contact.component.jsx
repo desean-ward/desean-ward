@@ -54,7 +54,6 @@ const Contact = () => {
 	const [emailHighlight, setEmailHighlight] = useState(false);
 	const [subjectHighlight, setSubjectHighlight] = useState(false);
 	const [messageHighlight, setMessageHighlight] = useState(false);
-	const user = process.env.NEXT_PUBLIC_EMAIL_USER
 	/**
 	 * **** Email Regex Validation ****
 	 */
