@@ -178,7 +178,7 @@ const Contact = () => {
 				});
 				console.log('Email sent!');
 			} else {
-				toast.warning('An error occurred when sending your email.', {
+				toast.error('An error occurred when sending your email.', {
 					position: 'top-center',
 					autoClose: 1500,
 					hideProgressBar: true,
