@@ -44,7 +44,7 @@ html {
   }
  
   input.input-error {
-    @apply border-red-900 border-2 
+    @apply border-red-900 border-2 outline-red-900 outline-2
   }
 
 

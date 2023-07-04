@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, CSSProperties } from 'react';
 
 import axios from 'axios';
 
@@ -18,6 +18,7 @@ import {
 	Input,
 	TextArea,
 	BackToTop,
+	Spinner,
 } from './contact.styles';
 
 import Image from 'next/image';
@@ -33,7 +34,10 @@ import { BsFillPersonLinesFill } from 'react-icons/bs';
 import { HiOutlineChevronDoubleUp } from 'react-icons/hi';
 
 import { motion } from 'framer-motion';
+import { toast } from 'react-toastify';
+
 import { sendContactForm } from '@/lib/api';
+//import SendmailTransport from 'nodemailer/lib/sendmail-transport';
 
 const Contact = () => {
 	/**
@@ -47,13 +51,14 @@ const Contact = () => {
 		message: '',
 	};
 	const [formValues, setFormValues] = useState(initialValues);
-	const [isSubmit, setIsSubmit] = useState(false);
+	const [isSubmitting, setIsSubmitting] = useState(false);
 
 	const [nameHighlight, setNameHighlight] = useState(false);
 	const [phoneHighlight, setPhoneHighlight] = useState(false);
 	const [emailHighlight, setEmailHighlight] = useState(false);
 	const [subjectHighlight, setSubjectHighlight] = useState(false);
 	const [messageHighlight, setMessageHighlight] = useState(false);
+
 	/**
 	 * **** Email Regex Validation ****
 	 */
@@ -64,60 +69,94 @@ const Contact = () => {
 	 * **** Validate The Form Fields Before Submitting ****
 	 */
 	const validate = values => {
-		console.log(values);
+		let numErrors = 0;
+
 		try {
 			if (!values.name) {
 				setNameHighlight(true);
-				name.focus();
+				numErrors += 1;
+				//name.focus();
 			} else setNameHighlight(false);
+
+			if (!values.phone) {
+				setPhoneHighlight(true);
+				numErrors += 1;
+				//phone.focus();
+			} else setPhoneHighlight(false);
 
 			if (!values.email) {
 				setEmailHighlight(true);
-			} else if (values.email.match(emailFormat)) {
-				setEmailHighlight(false);
-			} else email.focus();
+				numErrors += 1;
+				//email.focus();
+			} else if (!values.email.match(emailFormat)) {
+				setEmailHighlight(true);
+				numErrors += 1;
+				//email.focus();
+			} else setEmailHighlight(false);
 
 			if (!values.subject) {
 				setSubjectHighlight(true);
-				subject.focus();
+				numErrors += 1;
+				//subject.focus();
 			} else setSubjectHighlight(false);
 
 			if (!values.message) {
 				setMessageHighlight(true);
+				numErrors += 1;
+				//message.focus();
 			} else setMessageHighlight(false);
 		} catch (err) {
-			return;
+			console.log(`Error With Validating: ${err}`)
 		}
-
-		// const fields = document.querySelectorAll('.highlight')
-
-		// try {
-		// 	if (fields && fields.length > 0) fields[0].focus()
-		// 	else return true
-		// } catch (err) {
-		// 	return false
-		// }
+		
+		if (numErrors === 0) return true;
+		else {
+			toast.warning('Please correct the highlighted fields.', {
+				position: 'top-center',
+				autoClose: 1500,
+				hideProgressBar: true,
+				closeOnClick: true,
+				pauseOnHover: true,
+				draggable: true,
+				progress: undefined,
+				theme: 'dark',
+			});
+		}
 	};
 
 	const handleChange = e => {
 		const { name, value } = e.target;
 		setFormValues({ ...formValues, [name]: value });
+
+		switch(name) {
+			case 'name': 
+				setNameHighlight(false);
+				break;
+			case 'phone': 
+				setPhoneHighlight(false);
+				break;
+			case 'email': 
+				setEmailHighlight(false);
+				break;
+			case 'subject': 
+				setSubjectHighlight(false);
+				break;
+			case 'message': 
+				setMessageHighlight(false);
+				break;
+			default: 
+				break;
+		}
+		
 	};
 
 	const handleSubmit = async e => {
 		e.preventDefault();
-		// TODO: Investigate what's not working the way I want
-		// console.log(isSubmit);
-		// console.log('handle submit?');
-		// //validate(formValues) ? setIsSubmit(true) : setIsSubmit(false)
-		// setIsSubmit(true);
-		sendEmail();
-		// console.log(isSubmit);
-		//await sendContactForm(formValues)
-		//axios.post('/api/contact/', formValues)
+		validate(formValues) === true ? setIsSubmitting(true) : setIsSubmitting(false)
 	};
 
 	const sendEmail = async () => {
+		setIsSubmitting(true);
 		try {
 			const sent = await axios({
 				method: 'post',
@@ -127,44 +166,43 @@ const Contact = () => {
 
 			if (sent.statusText === 'OK') {
 				setFormValues(initialValues);
-				console.log(`Email sent!:  ${user}`);
+				toast.success('Email sent successfully', {
+					position: 'top-center',
+					autoClose: 1500,
+					hideProgressBar: true,
+					closeOnClick: true,
+					pauseOnHover: true,
+					draggable: true,
+					progress: undefined,
+					theme: 'dark',
+				});
+				console.log('Email sent!');
 			} else {
+				toast.warning('An error occurred when sending your email.', {
+					position: 'top-center',
+					autoClose: 1500,
+					hideProgressBar: true,
+					closeOnClick: true,
+					pauseOnHover: true,
+					draggable: true,
+					progress: undefined,
+					theme: 'dark',
+				});
 				console.log(`Email not sent!, ${sent.status}`);
 			}
 		} catch (error) {
 			console.log('Email send error: ', error);
 		}
+
+		setIsSubmitting(false);
 	};
 
 	const form = useRef();
-
-	// const sendEmail = () => {
-	// 	emailjs
-	// 		.sendForm(
-	// 			'service_jhnvilg',
-	// 			formValues,
-	// 			'user_E2SDLaiMBuyQ2WLk4t4Vg'
-	// 		)
-	// 		.then(
-	// 			(result) => {
-	// 				console.log(result.text)
-	// 			},
-	// 			(error) => {
-	// 				console.log(error.text)
-	// 			}
-	// 		)
-	// }
-
 	useEffect(() => {
-		setFormValues(initialValues);
-	}, [isSubmit]);
-
-	useEffect(() => {
-		if (isSubmit) {
-			//sendEmail();
-			//showModal()
+		if (isSubmitting === true) {
+			sendEmail();
 		}
-	}, [isSubmit]);
+	}, [isSubmitting]);
 
 	/**
 	 * **** Animation Variants ****
@@ -289,6 +327,7 @@ const Contact = () => {
 												name='name'
 												value={formValues.name}
 												onChange={handleChange}
+												error={nameHighlight}
 											/>
 										</Field>
 
@@ -299,6 +338,7 @@ const Contact = () => {
 												name='phone'
 												value={formValues.phone}
 												onChange={handleChange}
+												error={phoneHighlight}
 											/>
 										</Field>
 									</NamePhoneWrapper>
@@ -310,6 +350,7 @@ const Contact = () => {
 											name='email'
 											value={formValues.email}
 											onChange={handleChange}
+											error={emailHighlight}
 										/>
 									</Field>
 
@@ -320,6 +361,7 @@ const Contact = () => {
 											name='subject'
 											value={formValues.subject}
 											onChange={handleChange}
+											error={subjectHighlight}
 										/>
 									</Field>
 
@@ -330,13 +372,26 @@ const Contact = () => {
 											name='message'
 											value={formValues.message}
 											onChange={handleChange}
+											error={messageHighlight}
 										/>
 									</Field>
 
 									<button
 										type='submit'
 										className='w-full p-4 bg-[tan] text-gray-900 mt-4'>
-										Send Message
+										<Spinner
+											size={10}
+											submit={isSubmitting}
+										/>
+
+										<span className='px-4'>
+											Send Message
+										</span>
+
+										<Spinner
+											size={10}
+											submit={isSubmitting}
+										/>
 									</button>
 								</form>
 							</FormWrapper>

@@ -1,7 +1,4 @@
 'use strict';
-
-import { FaPencilRuler } from 'react-icons/fa';
-
 const nodemailer = require('nodemailer');
 
 //const router = express.Router();
