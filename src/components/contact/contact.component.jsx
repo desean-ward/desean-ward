@@ -157,47 +157,106 @@ const Contact = () => {
 			: setIsSubmitting(false);
 	};
 
-	const sendEmail = async () => {
-		setIsSubmitting(true);
-		try {
-			const sent = await axios({
-				method: 'post',
-				url: '/api/contact',
-				params: formValues,
-			});
+	const mailData = {
+		from: `"My Contact Form" <${process.env.EMAIL_USER}>`,
+		fromName: formValues.name,
+		replyTo: `${formValues.name} <${formValues.email}>`,
+		to: process.env.EMAIL_USER,
+		subject: `Contact Form: ${formValues.subject}`,
+		html: `
+				Name: ${formValues.name}<br />
+				Phone: ${formValues.phone}<br />
+				Email: <b>${formValues.email}</b>
+				
+				<p><b>Re: ${formValues.subject}</b></p>
 
-			if (sent.statusText === 'OK') {
-				setFormValues(initialValues);
-				toast.success('Email sent successfully', {
-					position: 'top-center',
-					autoClose: 1500,
-					hideProgressBar: true,
-					closeOnClick: true,
-					pauseOnHover: true,
-					draggable: true,
-					progress: undefined,
-					theme: 'dark',
-				});
-				console.log('Email sent!');
-			} else {
-				toast.error('An error occurred when sending your email.', {
-					position: 'top-center',
-					autoClose: 1500,
-					hideProgressBar: true,
-					closeOnClick: true,
-					pauseOnHover: true,
-					draggable: true,
-					progress: undefined,
-					theme: 'dark',
-				});
-				console.log(`Email not sent!, ${sent.status}`);
-			}
-		} catch (error) {
-			console.log('Email send error: ', error);
-		}
-
-		setIsSubmitting(false);
+				<p>${formValues.message}</p>
+			`,
 	};
+
+	const sendEmail = async () => {
+		const sent = emailjs
+			.sendForm(
+				'service_2wtw90c',
+				'dw-fazhionz-contact-us',
+				form.current,
+				'user_E2SDLaiMBuyQ2WLk4t4Vg'
+			)
+			.then(
+				(result) => {
+					setFormValues(initialValues);
+						toast.success('Email sent successfully', {
+						position: 'top-center',
+						autoClose: 1500,
+						hideProgressBar: true,
+						closeOnClick: true,
+						pauseOnHover: true,
+						draggable: true,
+						progress: undefined,
+						theme: 'dark',
+					});
+					console.log('Email sent!');
+					console.log(result.text)
+				},
+				(error) => {
+					toast.error(
+						'An error occurred when sending your email.', {
+						position: 'top-center',
+						autoClose: 1500,
+						hideProgressBar: true,
+						closeOnClick: true,
+						pauseOnHover: true,
+						draggable: true,
+						progress: undefined,
+						theme: 'dark',
+					});
+					console.log(`Email not sent!`);
+					console.log(error.text)
+				}
+			)
+	}
+
+	// const sendEmail = async () => {
+	// 	setIsSubmitting(true);
+	// 	try {
+	// 		const sent = await axios({
+	// 			method: 'post',
+	// 			url: '/api/contact',
+	// 			params: formValues,
+	// 		});
+
+	// 		if (sent.statusText === 'OK') {
+	// 			setFormValues(initialValues);
+	// 			toast.success('Email sent successfully', {
+	// 				position: 'top-center',
+	// 				autoClose: 1500,
+	// 				hideProgressBar: true,
+	// 				closeOnClick: true,
+	// 				pauseOnHover: true,
+	// 				draggable: true,
+	// 				progress: undefined,
+	// 				theme: 'dark',
+	// 			});
+	// 			console.log('Email sent!');
+	// 		} else {
+	// 			toast.error('An error occurred when sending your email.', {
+	// 				position: 'top-center',
+	// 				autoClose: 1500,
+	// 				hideProgressBar: true,
+	// 				closeOnClick: true,
+	// 				pauseOnHover: true,
+	// 				draggable: true,
+	// 				progress: undefined,
+	// 				theme: 'dark',
+	// 			});
+	// 			console.log(`Email not sent!, ${sent.status}`);
+	// 		}
+	// 	} catch (error) {
+	// 		console.log('Email send error: ', error);
+	// 	}
+
+	// 	setIsSubmitting(false);
+	// };
 
 	const form = useRef();
 	useEffect(() => {
