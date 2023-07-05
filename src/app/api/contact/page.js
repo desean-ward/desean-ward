@@ -41,19 +41,21 @@ export default async function handler(req, res) {
 	try {
 		await new Promise((res, rej) => {
 			// SEND EMAIL
-			transporter.sendMail(mailData, (err, info) => {
-				if (err) {
-					console.log(err)
-					rej(err)
-				} else {
-					console.log(info)
-					res(info)
-				}
-			})
+			// transporter.sendMail(mailData, (err, info) => {
+			// 	if (err) {
+			// 		console.log(err)
+			// 		rej(err)
+			// 	} else {
+			// 		console.log(info)
+			// 		res(info)
+			// 	}
+			// })
 
-			res.status(200).json({ status: 'OK' })
-			return 'success'
-		})
+			transporter.sendMail(mailData);
+
+			res.status(200).json({ status: 'OK' });
+			return 'success';
+		});
 	} catch (error) {
 		return 'fail';
 	}

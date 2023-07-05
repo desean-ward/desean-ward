@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+'use client'
+import styled, {css} from 'styled-components';
 import tw from 'tailwind-styled-components';
 import { motion } from 'framer-motion';
 
@@ -19,15 +20,20 @@ export const SkillsContentWrapper = tw(motion.div)`
 `;
 
 export const SkillsTechWrapper = tw(motion.div)`
-    grid md:grid-cols-2 lg:grid-cols-4 gap-8
+	grid md:grid-cols-2 lg:grid-cols-4 gap-8
+
 `;
+
+// const SkillCSS = css`
+//     filter: blur(5px)
+// `
 
 export const SkillWrapper = tw.div`
     p-6 
-    shadow-xl 
+    shadow-xl
     rounded-xl
     
-    hover:scale-105 ease-in duration-300
+    hover:scale-105 ease-in duration-300 
 `;
 
 export const Skill = tw.div`

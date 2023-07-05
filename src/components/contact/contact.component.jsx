@@ -19,6 +19,7 @@ import {
 	TextArea,
 	BackToTop,
 	Spinner,
+	ButtonWrapper,
 } from './contact.styles';
 
 import Image from 'next/image';
@@ -106,9 +107,9 @@ const Contact = () => {
 				//message.focus();
 			} else setMessageHighlight(false);
 		} catch (err) {
-			console.log(`Error With Validating: ${err}`)
+			console.log(`Error With Validating: ${err}`);
 		}
-		
+
 		if (numErrors === 0) return true;
 		else {
 			toast.warning('Please correct the highlighted fields.', {
@@ -128,31 +129,32 @@ const Contact = () => {
 		const { name, value } = e.target;
 		setFormValues({ ...formValues, [name]: value });
 
-		switch(name) {
-			case 'name': 
+		switch (name) {
+			case 'name':
 				setNameHighlight(false);
 				break;
-			case 'phone': 
+			case 'phone':
 				setPhoneHighlight(false);
 				break;
-			case 'email': 
+			case 'email':
 				setEmailHighlight(false);
 				break;
-			case 'subject': 
+			case 'subject':
 				setSubjectHighlight(false);
 				break;
-			case 'message': 
+			case 'message':
 				setMessageHighlight(false);
 				break;
-			default: 
+			default:
 				break;
 		}
-		
 	};
 
 	const handleSubmit = async e => {
 		e.preventDefault();
-		validate(formValues) === true ? setIsSubmitting(true) : setIsSubmitting(false)
+		validate(formValues) === true
+			? setIsSubmitting(true)
+			: setIsSubmitting(false);
 	};
 
 	const sendEmail = async () => {
@@ -376,23 +378,24 @@ const Contact = () => {
 										/>
 									</Field>
 
-									<button
-										type='submit'
-										className='w-full p-4 bg-[tan] text-gray-900 mt-4'>
-										<Spinner
-											size={10}
+									<ButtonWrapper>
+										<button
+											type='submit'
 											submit={isSubmitting}
-										/>
-
-										<span className='px-4'>
-											Send Message
-										</span>
-
-										<Spinner
-											size={10}
-											submit={isSubmitting}
-										/>
-									</button>
+											color='red'
+											className='w-full p-4 bg-[tan] mt-4'>
+											<span className='px-4'>
+												{isSubmitting ? (
+													<Spinner
+														size={10}
+														color='gray'
+													/>
+												) : (
+													'Send Message'
+												)}
+											</span>
+										</button>
+									</ButtonWrapper>
 								</form>
 							</FormWrapper>
 						</RightSide>

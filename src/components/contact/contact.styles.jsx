@@ -1,4 +1,6 @@
 import tw from 'tailwind-styled-components';
+import styled from 'styled-components';
+import { css } from 'react';
 import { motion } from 'framer-motion';
 import { PulseLoader } from 'react-spinners';
 
@@ -51,12 +53,6 @@ export const RightSide = tw(motion.div)`
 
 export const FormWrapper = tw.div`
     p-4
-
-    .sendBtn {
-        text-red-900;
-    }
-
-    
 `;
 
 export const NamePhoneWrapper = tw.div`
@@ -75,17 +71,21 @@ export const Field = tw.section`
 
 export const Input = tw.input`
     ${props => (props.error === true ? 'input-error' : '')}
+    
     border-2 rounded-lg p-3 border-gray-300 focus:outline-none 
 `;
 export const TextArea = tw.textarea`
     ${props => (props.error === true ? 'border-red-900' : 'border-gray-300')}
+
     border-2 rounded-lg p-3 focus:outline-none resize-none
 `;
 
 export const BackToTop = tw.div`
-     invisible //flex justify-center py-12
+     invisible //flex justifycenter py-12
 `;
 
-export const Spinner = tw(PulseLoader)`
-    ${props => (props.submit === true ? 'inline-block' : 'hidden')}
+export const ButtonWrapper = styled.div``;
+
+export const Spinner = styled(PulseLoader)`
+
 `;

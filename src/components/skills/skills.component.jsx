@@ -41,6 +41,10 @@ const Skills = () => {
 		},
 	};
 
+	function focusMe(skillName) {
+		console.log(skillName)
+	}
+
 	return (
 		<SkillsContainer id='skills' className=''>
 			<SkillsContentWrapper>
