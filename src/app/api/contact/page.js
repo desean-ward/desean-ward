@@ -1,7 +1,7 @@
 const nodemailer = require('nodemailer');
 
 //const router = express.Router();
-console.log(process.env.NEXT_PUBLIC_EMAIL_USER);
+console.log(process.env.EMAIL_USER);
 export default async function handler(req, res) {
 	const { name, phone, email, subject, message } = req.searchParams;
 	/**
@@ -12,8 +12,8 @@ export default async function handler(req, res) {
 		port: 465,
 		secure: true,
 		auth: {
-			user: process.env.NEXT_PUBLIC_EMAIL_USER,
-			pass: process.env.NEXT_PUBLIC_EMAIL_PASSWORD,
+			user: process.env.EMAIL_USER,
+			pass: process.env.EMAIL_PASSWORD,
 		},
 		tls: {
 			// do not fail on invalid certs
@@ -22,10 +22,10 @@ export default async function handler(req, res) {
 	});
 
 	const mailData = {
-		from: `"My Contact Form" <${process.env.NEXT_PUBLIC_EMAIL_USER}>`,
+		from: `"My Contact Form" <${process.env.EMAIL_USER}>`,
 		fromName: name,
 		replyTo: `${name} <${email}>`,
-		to: process.env.NEXT_PUBLIC_EMAIL_USER,
+		to: process.env.EMAIL_USER,
 		subject: `Contact Form: ${subject}`,
 		html: `
 				Name: ${name}<br />
@@ -41,21 +41,19 @@ export default async function handler(req, res) {
 	try {
 		await new Promise((res, rej) => {
 			// SEND EMAIL
-			// transporter.sendMail(mailData, (err, info) => {
-			// 	if (err) {
-			// 		console.log(err)
-			// 		rej(err)
-			// 	} else {
-			// 		console.log(info)
-			// 		res(info)
-			// 	}
-			// })
+			transporter.sendMail(mailData, (err, info) => {
+				if (err) {
+					console.log(err)
+					rej(err)
+				} else {
+					console.log(info)
+					res(info)
+				}
+			})
 
-			transporter.sendMail(mailData);
-
-			res.status(200).json({ status: 'OK' });
-			return 'success';
-		});
+			res.status(200).json({ status: 'OK' })
+			return 'success'
+		})
 	} catch (error) {
 		return 'fail';
 	}
