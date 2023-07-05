@@ -178,6 +178,7 @@ const Contact = () => {
 						progress: undefined,
 						theme: 'dark',
 					});
+					setIsSubmitting(false)
 					console.log('Email sent!');
 					console.log(result.text);
 				},
@@ -192,10 +193,13 @@ const Contact = () => {
 						progress: undefined,
 						theme: 'dark',
 					});
+					setIsSubmitting(false)
 					console.log(`Email not sent!`);
 					console.log(error.text);
-				}
+				},
+				
 			);
+
 	};
 
 	/**
