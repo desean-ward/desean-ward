@@ -160,15 +160,15 @@ const Contact = () => {
 	const sendEmail = async () => {
 		const sent = emailjs
 			.sendForm(
-				'service_2wtw90c',
-				'dw-fazhionz-contact-us',
+				'service_3cyb6k1',
+				'dward_contact_form',
 				form.current,
-				'user_E2SDLaiMBuyQ2WLk4t4Vg'
+				'JIw9-titSipFbwgrz'
 			)
 			.then(
-				(result) => {
+				result => {
 					setFormValues(initialValues);
-						toast.success('Email sent successfully', {
+					toast.success('Email sent successfully', {
 						position: 'top-center',
 						autoClose: 1500,
 						hideProgressBar: true,
@@ -179,11 +179,10 @@ const Contact = () => {
 						theme: 'dark',
 					});
 					console.log('Email sent!');
-					console.log(result.text)
+					console.log(result.text);
 				},
-				(error) => {
-					toast.error(
-						'An error occurred when sending your email.', {
+				error => {
+					toast.error('An error occurred when sending your email.', {
 						position: 'top-center',
 						autoClose: 1500,
 						hideProgressBar: true,
@@ -194,10 +193,10 @@ const Contact = () => {
 						theme: 'dark',
 					});
 					console.log(`Email not sent!`);
-					console.log(error.text)
+					console.log(error.text);
 				}
-			)
-	}
+			);
+	};
 
 	/**
 	 * ! ********** DO NOT DELETE - TESTING NEEDED FOR VERCEL IN PRODUCTION **********
