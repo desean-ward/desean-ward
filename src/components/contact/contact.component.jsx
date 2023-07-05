@@ -157,23 +157,6 @@ const Contact = () => {
 			: setIsSubmitting(false);
 	};
 
-	const mailData = {
-		from: `"My Contact Form" <${process.env.EMAIL_USER}>`,
-		fromName: formValues.name,
-		replyTo: `${formValues.name} <${formValues.email}>`,
-		to: process.env.EMAIL_USER,
-		subject: `Contact Form: ${formValues.subject}`,
-		html: `
-				Name: ${formValues.name}<br />
-				Phone: ${formValues.phone}<br />
-				Email: <b>${formValues.email}</b>
-				
-				<p><b>Re: ${formValues.subject}</b></p>
-
-				<p>${formValues.message}</p>
-			`,
-	};
-
 	const sendEmail = async () => {
 		const sent = emailjs
 			.sendForm(
@@ -216,6 +199,10 @@ const Contact = () => {
 			)
 	}
 
+	/**
+	 * ! ********** DO NOT DELETE - TESTING NEEDED FOR VERCEL IN PRODUCTION **********
+	 */
+
 	// const sendEmail = async () => {
 	// 	setIsSubmitting(true);
 	// 	try {
@@ -257,6 +244,9 @@ const Contact = () => {
 
 	// 	setIsSubmitting(false);
 	// };
+	/**
+	 * ! **************************************************************************
+	 */
 
 	const form = useRef();
 	useEffect(() => {
