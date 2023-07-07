@@ -35,29 +35,32 @@ const Projects = () => {
                 </motion.section>
                 
                 <ProjectsWrapper
-                    variants={slideDown}
-                    initial='initial'
-                    animate='animate'
+                variants={slideDown}
+                initial='initial'
+                animate='animate'
                 >
+                    {/**
+                    ****  Add the 'ready' property to 'ProjectItem' components to enable the 'More Info' overlay ****
+                    */}
+                    {/**
+                    * *** D.W. FAZHIONZ ***
+                    */}
+                    <ProjectItem ready img={dwFazhionz} title='D.W. Fazhionz!' text='A fashion e-Commerce website built with React and Firebase.' page='/projects/dwfazhionz' />
+                
                     {/**
                         * *** D.W. FAZHIONZ ***
                     */}
-                    <ProjectItem img={dwFazhionz} title='D.W. Fazhionz!' text='A fashion e-Commerce website built with React and Firebase.' page='/projects/dwfazhionz' />
+                    <ProjectItem img={comingsoon} title='Stay Tuned' text='Coming Soon' page='/projects' />
+                
+                    {/**
+                        * *** D.W. FAZHIONZ ***
+                    */}
+                    <ProjectItem img={comingsoon} title='Stay Tuned' text='Coming Soon' page='/projects' />
 
-                {/**
-                     * *** D.W. FAZHIONZ ***
-                 */}
-                 <ProjectItem img={comingsoon} title='Stay Tuned' text='Coming Soon' page='/projects' />
-            
-                {/**
-                    * *** D.W. FAZHIONZ ***
-                 */}
-                 <ProjectItem img={comingsoon} title='Stay Tuned' text='Coming Soon' page='/projects' />
-
-                {/**
-                    * *** D.W. FAZHIONZ ***
-                 */}
-                 <ProjectItem img={comingsoon} title='Stay Tuned' text='Coming Soon' page='/projects' />
+                    {/**
+                        * *** D.W. FAZHIONZ ***
+                    */}
+                    <ProjectItem img={comingsoon} title='Stay Tuned' text='Coming Soon' page='/projects' />
                </ProjectsWrapper>
             </ProjectsContentWrapper>
         </ProjectsContainer>  

@@ -14,7 +14,7 @@ import {
 	ProjectItemWrapper,
 } from './project-item.styles'
 
-const ProjectItem = ({ key, img, title, text, page }) => {
+const ProjectItem = ({ key, img, title, text, page, ready }) => {
 	const [ overlay, setOverlay ] = useState(false)
 	const [ thisScreen, setThisScreen ] = useState(0)
 
@@ -40,6 +40,7 @@ const ProjectItem = ({ key, img, title, text, page }) => {
 					 **** ANIMATED OVERLAY ****
 					 */}
 					<ProjectItemOverlay
+					 	ready={ready}
 						variants={show}
 						initial='hidden'
 						animate='visible'

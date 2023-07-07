@@ -27,6 +27,7 @@ export const ProjectItemWrapper = tw.div`
 `
 
 export const ProjectItemOverlay = tw(motion.div)`
+    ${props => (props.ready ? 'block' : 'hidden')}
     group 
     absolute
     h-[100%] 

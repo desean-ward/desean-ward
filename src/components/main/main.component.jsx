@@ -196,7 +196,7 @@ const Main = () => {
 					animate='animate'>
 					<CircularText>
 						<Image
-							src='/assets/svg/circular-text.png'
+							src='/assets/svg/circular-text-2.png'
 							width='250'
 							height='250'
 							style={{

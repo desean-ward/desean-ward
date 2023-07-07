@@ -41,8 +41,25 @@ const Skills = () => {
 		},
 	};
 
+	const skills = document.querySelectorAll('.skill');
+
 	function focusMe(skillName) {
-		console.log(skillName)
+		for (let i = 0; i < skills.length; i++) {
+			if ((skills[i].id !== skillName) == true) {
+				skills[i].style.filter = 'blur(5px)';
+				skills[i].style.opacity = '0.5';
+				skills[i].style.transition = 'all 0.3 ease-in-out';
+			}
+		}
+		console.log(skillName);
+	}
+
+	function blurAll() {
+		skills.forEach(skill => {
+			skill.style.filter = '';
+			skill.style.opacity = 1;
+			skill.style.transition = 'all 0.3 ease-in-out';
+		});
 	}
 
 	return (
@@ -70,7 +87,12 @@ const Skills = () => {
 
 							return (
 								/** SKILL WRAPPER */
-								<SkillWrapper key={fileName}>
+								<SkillWrapper
+									className='skill'
+									id={fileName}
+									key={fileName}
+									onMouseEnter={() => focusMe(fileName)}
+									onMouseLeave={blurAll}>
 									<Skill>
 										{/** SKILL IMAGE */}
 										<div className='m-auto'>
