@@ -1,5 +1,4 @@
 'use client';
-import styled, { css } from 'styled-components';
 import tw from 'tailwind-styled-components';
 import { motion } from 'framer-motion';
 
@@ -31,8 +30,6 @@ export const SkillWrapper = tw.div`
     hover:red
 
     hover:scale-105 ease-in duration-300
-   
-
 `;
 
 export const Skill = tw.div`

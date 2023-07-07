@@ -45,7 +45,7 @@ const Skills = () => {
 
 	function focusMe(skillName) {
 		for (let i = 0; i < skills.length; i++) {
-			if ((skills[i].id !== skillName) == true) {
+			if (skills[i].id !== skillName) {
 				skills[i].style.filter = 'blur(5px)';
 				skills[i].style.opacity = '0.5';
 				skills[i].style.transition = 'all 0.3 ease-in-out';
