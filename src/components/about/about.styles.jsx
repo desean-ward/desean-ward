@@ -1,8 +1,5 @@
 import styled from 'styled-components';
 import tw from 'tailwind-styled-components';
-
-import { CustomImage } from '../customs/custom-image.component';
-
 import { motion } from 'framer-motion'
 
 export const AboutContainer = tw.div`

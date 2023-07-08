@@ -43,6 +43,8 @@ const Navbar = () => {
 			}
 		};
 		window.addEventListener('scroll', handleShadow);
+
+		return () => window.removeEventListener('scroll', handleShadow);
 	}, []);
 
 	return (
@@ -61,23 +63,23 @@ const Navbar = () => {
 				<ul
 					style={{ color: `${linkColor}` }}
 					className='hidden md:flex text-sm uppercase'>
-					<CustomLink href='/' scroll={false}>
+					<CustomLink href='/'>
 						<li className='ml-10'>Home</li>
 					</CustomLink>
 
-					<CustomLink href='/about' scroll={false}>
+					<CustomLink href='/about'>
 						<li className='ml-10'>About</li>
 					</CustomLink>
 
-					<CustomLink href='/skills' scroll={false}>
+					<CustomLink href='/skills'>
 						<li className='ml-10'>Skills</li>
 					</CustomLink>
 
-					<CustomLink href='/projects' scroll={false}>
+					<CustomLink href='/projects'>
 						<li className='ml-10'>Projects</li>
 					</CustomLink>
 
-					<CustomLink href='/contact' scroll={false}>
+					<CustomLink href='/contact'>
 						<li className='ml-10'>Contact Me</li>
 					</CustomLink>
 				</ul>
@@ -145,7 +147,7 @@ const Navbar = () => {
 					 */}
 					<div className='py-4 flex flex-col'>
 						<ul className='uppercase text-sm'>
-							<CustomLink href='/' as='/home' scroll={false}>
+							<CustomLink href='/' as='/home' >
 								<li
 									className='pb-4'
 									onClick={() => setNav(false)}>
@@ -153,7 +155,7 @@ const Navbar = () => {
 								</li>
 							</CustomLink>
 
-							<CustomLink href='/about' scroll={false}>
+							<CustomLink href='/about'>
 								<li
 									className='pb-4'
 									onClick={() => setNav(false)}>
@@ -161,7 +163,7 @@ const Navbar = () => {
 								</li>
 							</CustomLink>
 
-							<CustomLink href='/skills' scroll={false}>
+							<CustomLink href='/skills'>
 								<li
 									className='pb-4'
 									onClick={() => setNav(false)}>
@@ -169,7 +171,7 @@ const Navbar = () => {
 								</li>
 							</CustomLink>
 
-							<CustomLink href='/projects' scroll={false}>
+							<CustomLink href='/projects'>
 								<li
 									className='pb-4'
 									onClick={() => setNav(false)}>
@@ -177,7 +179,7 @@ const Navbar = () => {
 								</li>
 							</CustomLink>
 
-							<CustomLink href='/contact' scroll={false}>
+							<CustomLink href='/contact'>
 								<li
 									className='pb-4'
 									onClick={() => setNav(false)}>

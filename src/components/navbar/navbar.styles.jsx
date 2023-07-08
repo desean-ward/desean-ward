@@ -1,5 +1,4 @@
 'use client'
-import styled from 'styled-components';
 import tw from 'tailwind-styled-components';
 
 export const NavContainer = tw.div`

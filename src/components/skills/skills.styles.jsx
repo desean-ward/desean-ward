@@ -1,5 +1,7 @@
 'use client';
+import styled from 'styled-components';
 import tw from 'tailwind-styled-components';
+import { css } from '@emotion/react';
 import { motion } from 'framer-motion';
 
 export const SkillsContainer = tw.div`
@@ -16,7 +18,6 @@ export const SkillsContentWrapper = tw(motion.div)`
     mx-auto 
     flex flex-col justify-center 
     h-full
-    group
 `;
 
 export const SkillsTechWrapper = tw(motion.div)`
@@ -24,15 +25,17 @@ export const SkillsTechWrapper = tw(motion.div)`
 `;
 
 export const SkillWrapper = tw.div`
+    group    
     p-6 
     shadow-xl
     rounded-xl
-    hover:red
-
-    hover:scale-105 ease-in duration-300
+    flex justify-center items-center
+   
+    hover:scale-110 ease-in duration-300
 `;
 
-export const Skill = tw.div`
+export const SkillLogo = tw.div`
+    w-auto h-auto
     grid grid-cols-2 gap-4 justify-center items-center
 `;
 

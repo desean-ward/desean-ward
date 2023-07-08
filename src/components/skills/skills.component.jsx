@@ -1,12 +1,12 @@
 import Image from 'next/image';
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
 	SkillWrapper,
 	SkillsContainer,
 	SkillsContentWrapper,
 	SkillsTechWrapper,
-	Skill,
 	SkillTitle,
+	SkillLogo,
 } from './skills.styles';
 
 import { motion } from 'framer-motion';
@@ -27,6 +27,11 @@ const Skills = () => {
 		'stripe',
 	];
 
+	// Array to hold the 'Skills' components rendered
+	let displayOfSkills;
+
+	let focusedSkill = '';
+
 	const scaleIn = {
 		initial: { scale: 0 },
 		animate: { scale: 1, transition: { delay: 1, duration: 0.5 } },
@@ -41,26 +46,29 @@ const Skills = () => {
 		},
 	};
 
-	const skills = document.querySelectorAll('.skill');
+	function focusMe(e) {
+		focusedSkill = e.target;
 
-	function focusMe(skillName) {
-		for (let i = 0; i < skills.length; i++) {
-			if (skills[i].id !== skillName) {
-				skills[i].style.filter = 'blur(5px)';
-				skills[i].style.opacity = '0.5';
-				skills[i].style.transition = 'all 0.3 ease-in-out';
+		for (let i = 0; i < displayOfSkills.length; i++) {
+			if (focusedSkill.id !== displayOfSkills[i].id) {
+				displayOfSkills[i].style.filter = 'blur(5px)'
+				displayOfSkills[i].style.opacity = '0.25'
+				displayOfSkills[i].style.transition = 'all 0.2 ease'
 			}
 		}
-		console.log(skillName);
 	}
 
 	function blurAll() {
-		skills.forEach(skill => {
+		displayOfSkills.forEach(skill => {
 			skill.style.filter = '';
 			skill.style.opacity = 1;
-			skill.style.transition = 'all 0.3 ease-in-out';
+			skill.style.transition = 'all 0.2 ease';
 		});
 	}
+
+	useEffect(() => {
+		displayOfSkills = document.querySelectorAll('.skill');
+	}, []);
 
 	return (
 		<SkillsContainer id='skills' className=''>
@@ -82,18 +90,18 @@ const Skills = () => {
 						/**
 						 * *** SKILLS GRID ***
 						 */
-						skillset.map(skill => {
+						skillset.map((skill, idx) => {
 							let fileName = '/assets/skills/' + skill + '.png';
 
 							return (
 								/** SKILL WRAPPER */
 								<SkillWrapper
 									className='skill'
-									id={fileName}
-									key={fileName}
-									onMouseEnter={() => focusMe(fileName)}
-									onMouseLeave={blurAll}>
-									<Skill>
+									key={idx}
+									id={skill}
+									onMouseEnter={focusMe}
+									onMouseLeave={() => blurAll()}>
+									<SkillLogo>
 										{/** SKILL IMAGE */}
 										<div className='m-auto'>
 											<Image
@@ -108,7 +116,7 @@ const Skills = () => {
 										<SkillTitle>
 											<h3>{skill.toUpperCase()}</h3>
 										</SkillTitle>
-									</Skill>
+									</SkillLogo>
 								</SkillWrapper>
 								/** END SKILL WRAPPER */
 							);

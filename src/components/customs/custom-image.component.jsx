@@ -3,7 +3,7 @@ import { StyledImage } from './customs.styles'
 
 export const CustomImage = ({ children }) => {
   return (
-    <StyledImage className='w-full h-auto m-auto shadow-xl shadow-gray-400 rounded-xl flex items-center justify-center'>
+    <StyledImage className='w-auto h-auto m-auto shadow-xl shadow-gray-400 rounded-xl flex items-center justify-center'>
         { children }
     </StyledImage>
   )
