@@ -52,7 +52,7 @@ const Skills = () => {
 		for (let i = 0; i < displayOfSkills.length; i++) {
 			if (focusedSkill.id !== displayOfSkills[i].id) {
 				displayOfSkills[i].style.filter = 'blur(5px)'
-				displayOfSkills[i].style.opacity = '0.25'
+				displayOfSkills[i].style.opacity = '0.5'
 				displayOfSkills[i].style.transition = 'all 0.2 ease'
 			}
 		}
@@ -79,7 +79,7 @@ const Skills = () => {
 					animate='animate'>
 					<p className='section-name'>Skills</p>
 
-					<h2 className='section-title'>What I Can Do</h2>
+					<h2 className='section-title'>How I Tech</h2>
 				</motion.section>
 
 				<SkillsTechWrapper
@@ -100,7 +100,8 @@ const Skills = () => {
 									key={idx}
 									id={skill}
 									onMouseEnter={focusMe}
-									onMouseLeave={() => blurAll()}>
+									onMouseLeave={() => blurAll()}
+								>
 									<SkillLogo>
 										{/** SKILL IMAGE */}
 										<div className='m-auto'>
