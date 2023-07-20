@@ -1,5 +1,6 @@
-![Full Stack Developer](https://github.com/desean-ward/desean-ward/assets/66344466/9ebdae2e-3344-4d94-904f-0e234de855cd)
+![Full Stack Developer](https://github.com/desean-ward/desean-ward/assets/66344466/da39f8e5-815e-44eb-94ff-f8d77598b39a)
 Full Stack Software Engineer
+
 
 
 
