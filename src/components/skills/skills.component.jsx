@@ -99,8 +99,9 @@ const Skills = () => {
 									className='skill'
 									key={idx}
 									id={skill}
-									onMouseEnter={focusMe}
-									onMouseLeave={() => blurAll()}
+									// onMouseEnter={focusMe}
+									// onClick={focusMe}
+									// onMouseLeave={() => blurAll()}
 								>
 									<SkillLogo>
 										{/** SKILL IMAGE */}

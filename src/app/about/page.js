@@ -1,5 +1,6 @@
 'use client'
 import About from '@/components/about/about.component'
+import Experience from '@/components/experience/experience.component'
 import TransitionEffect from '@/components/transition-effect/transition-effect.component'
 
 export default function AboutPage() {
@@ -7,6 +8,7 @@ export default function AboutPage() {
         <main className='flex min-h-screen flex-col items-center justify-between px-2'>
 			<TransitionEffect />
             <About />
+            <Experience />
         </main>
     )
 }
