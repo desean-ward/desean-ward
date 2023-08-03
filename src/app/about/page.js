@@ -8,7 +8,6 @@ export default function AboutPage() {
         <main className='flex min-h-screen flex-col items-center justify-between px-2'>
 			<TransitionEffect />
             <About />
-            <Experience />
         </main>
     )
 }
