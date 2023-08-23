@@ -11,7 +11,7 @@ export const ContactContainer = tw.div`
 
 export const ContactWrapper = tw.div`
     w-full
-    max-w-[1240px] 
+    max-w-[1000px] 
     m-auto 
     px-2 
     pt-[1em]

@@ -1,20 +1,19 @@
-import tw from 'tailwind-styled-components';
-import { motion } from 'framer-motion';
+import tw from "tailwind-styled-components";
+import { motion } from "framer-motion";
 
 export const HomeContainer = tw.div`
-    h-screen
+    h-full
     w-screen
     flex flex-col justify-center items-center
     px-2
-    mb-[16em] sm:mb-0
+    mt-20
 `;
 
 export const MainWrapper = tw.div`
     w-fit max-w-[1240px] 
-    h-fit
     grid content-center-center
     relative
-    top-[16em] xs:top-[8em] sm:top-0
+     
     `;
 
 export const IntroWrapper = tw.div`
@@ -39,15 +38,17 @@ export const TextWrapper = tw(motion.div)`
 
 export const SocialIconsWrapper = tw(motion.div)`
     relative 
-    z-5 
+    z-10
     flex items-center justify-between gap-4 
     max-w-[330px] 
     mx-auto
-    mb-8 sm:mb-0
+    
+    
 `;
 
 export const BottomInfoWrapper = tw(motion.div)`
     relative 
+    md:top-[-4em]
     w-[95%] md:w-[80%]
     max-w-[900px] 
     mx-auto 
@@ -57,8 +58,9 @@ export const BottomInfoWrapper = tw(motion.div)`
 `;
 
 export const CircularText = tw.div`
-    flex justify-center items-center 
+    flex justify-center items-center
     max-w-[150px]
+    mt-8 md:mt-0
 `;
 
 export const InitialsWrapper = tw.div`

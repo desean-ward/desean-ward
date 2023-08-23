@@ -67,26 +67,6 @@ const Projects = () => {
 						text='Coming Soon'
 						page='/projects'
 					/>
-
-					{/**
-					 * *** D.W. FAZHIONZ ***
-					 */}
-					<ProjectItem
-						img={comingsoon}
-						title='Stay Tuned'
-						text='Coming Soon'
-						page='/projects'
-					/>
-
-					{/**
-					 * *** D.W. FAZHIONZ ***
-					 */}
-					<ProjectItem
-						img={comingsoon}
-						title='Stay Tuned'
-						text='Coming Soon'
-						page='/projects'
-					/>
 				</ProjectsWrapper>
 			</ProjectsContentWrapper>
 		</ProjectsContainer>

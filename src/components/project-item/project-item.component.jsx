@@ -53,7 +53,7 @@ const ProjectItem = ({ key, img, title, text, page, ready }) => {
 								{title}
 							</h3>
 
-							<p className='pb-8 pt-2'>{text}</p>
+							<p className='mt-2'>{text}</p>
 
 							{/**
 							 * *** MORE INFO BUTTON***

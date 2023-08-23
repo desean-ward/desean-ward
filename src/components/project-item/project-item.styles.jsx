@@ -1,10 +1,8 @@
-import { motion } from 'framer-motion';
-import styled from 'styled-components';
-import tw from 'tailwind-styled-components';
+import { motion } from "framer-motion";
+import styled from "styled-components";
+import tw from "tailwind-styled-components";
 
-export const ProjectItemContainer = styled.div`
-   
-`
+export const ProjectItemContainer = styled.div``;
 
 export const ProjectItemBackground = tw.div`
     relative 
@@ -16,7 +14,7 @@ export const ProjectItemBackground = tw.div`
     p-4
     group 
     overflow-hidden
-`
+`;
 
 export const ProjectItemWrapper = tw.div`
     relative 
@@ -24,20 +22,19 @@ export const ProjectItemWrapper = tw.div`
     h-full 
     w-[100%] 
     overflow-hidden
-`
+`;
 
 export const ProjectItemOverlay = tw(motion.div)`
-    ${props => (props.ready == 'true' ? 'block' : 'hidden')}
+    ${(props) => (props.ready == "true" ? "block" : "hidden")}
     group 
     absolute
     h-[100%] 
     w-[100%] 
     bg-gradient-to-r from-[black] to-[tan] 
     top-[2em] 
-    p-2 
     rounded-xl 
     opacity-90 
-`
+`;
 
 export const OverlayText = tw.div`
     group
@@ -46,19 +43,19 @@ export const OverlayText = tw.div`
     top-[50%] translate-y-[-50%]
     left-[50%] translate-x-[-50%]
     text-white text-center
-`
+`;
 
 export const ButtonContainer = tw.div`
-    ${ props => 
-        props.screen < 768 
-        ? 'absolute left-[50%] translate-x-[-50%] w-[60%] top-[-100%]' 
-        : 'w-full'
-    }
+    ${(props) =>
+      props.screen < 768
+        ? "absolute left-[50%] translate-x-[-50%] w-[60%] top-[-100%]"
+        : "w-full"}
+        
+    justify-self-center
 
     p {
         width-[80%] 
         text-center 
-        py-2 
         rounded-lg 
         bg-black text-[tan] 
         font-bold 
@@ -66,5 +63,4 @@ export const ButtonContainer = tw.div`
         cursor-pointer 
         hover:bg-[lightgray] hover:text-black ease-in-out duration-300
     }
-`
-
+`;

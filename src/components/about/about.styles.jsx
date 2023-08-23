@@ -9,7 +9,7 @@ export const AboutContainer = tw.div`
 
 export const AboutContentWrapper = tw.div`
     relative 
-    max-w-[1240px] 
+    max-w-[1000px] 
     m-auto 
     flex flex-col-reverse
     
