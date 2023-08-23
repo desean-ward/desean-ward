@@ -7,7 +7,7 @@ export const ProjectItemContainer = styled.div``;
 export const ProjectItemBackground = tw.div`
     relative 
     flex items-center justify-center 
-    h-auto 
+    h-[200px]
     w-full 
     shadow-xl shadow-gray-400 
     rounded-xl 
