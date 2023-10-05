@@ -7,7 +7,7 @@ export const ProjectItemContainer = styled.div``;
 export const ProjectItemBackground = tw.div`
     relative 
     flex items-center justify-center 
-    h-[200px]
+    md:h-[200px] lg:h-[240px]
     w-full 
     shadow-xl shadow-gray-400 
     rounded-xl 
@@ -48,10 +48,12 @@ export const OverlayText = tw.div`
 export const ButtonContainer = tw.div`
     ${(props) =>
       props.screen < 768
-        ? "absolute left-[50%] translate-x-[-50%] w-[60%] top-[-100%]"
+        ? "left-[50%] translate-x-[-50%] w-[60%]"
         : "w-full"}
         
     justify-self-center
+    top-[-50%] md:top-[-100%] lg:top-[100%]
+    absolute lg:relative
 
     p {
         width-[80%] 

@@ -7,23 +7,24 @@ import {
   SkillsTechWrapper,
   SkillTitle,
   SkillLogo,
+  SkillsHeader,
 } from "./skills.styles";
 
 import { motion } from "framer-motion";
 
 const Skills = () => {
   const skillset = [
+    "mongo",
+    "express",
     "react",
+    "node",
     "nextjs",
     "javascript",
-    "html",
     "sass",
-    "firebase",
-    "node",
     "styled-components",
     "tailwind",
     "openai",
-    "github",
+    "redux",
     "stripe",
   ];
 
@@ -72,13 +73,12 @@ const Skills = () => {
 
   return (
     <SkillsContainer id='skills' className=''>
+      <SkillsHeader variants={slideUp} initial='initial' animate='animate'>
+        <p className='section-name'>Skills</p>
+
+        <h2 className='section-title'>How I Tech</h2>
+      </SkillsHeader>
       <SkillsContentWrapper>
-        <motion.section variants={slideUp} initial='initial' animate='animate'>
-          <p className='section-name'>Skills</p>
-
-          <h2 className='section-title'>How I Tech</h2>
-        </motion.section>
-
         <SkillsTechWrapper
           variants={scaleIn}
           initial='initial'

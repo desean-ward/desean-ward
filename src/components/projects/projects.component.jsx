@@ -5,6 +5,7 @@ import ProjectItem from '../project-item/project-item.component';
 import {
 	ProjectsContainer,
 	ProjectsContentWrapper,
+	ProjectsHeader,
 	ProjectsWrapper,
 } from './projects.styles';
 
@@ -31,14 +32,14 @@ const Projects = () => {
 
 	return (
 		<ProjectsContainer id='projects' className=' '>
+		<ProjectsHeader
+			variants={slideUp}
+			initial='initial'
+			animate='animate'>
+			<p className='section-name'>Projects</p>
+			<h2 className='section-title'>What I&#039;ve Built</h2>
+		</ProjectsHeader>
 			<ProjectsContentWrapper>
-				<motion.section
-					variants={slideUp}
-					initial='initial'
-					animate='animate'>
-					<p className='section-name'>Projects</p>
-					<h2 className='section-title'>What I&#039;ve Built</h2>
-				</motion.section>
 
 				<ProjectsWrapper
 					variants={slideDown}

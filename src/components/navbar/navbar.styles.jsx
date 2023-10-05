@@ -12,9 +12,9 @@ export const NavContainer = tw.div`
 
 export const NavWrapper = tw.div`
     flex items-center justify-between 
-    w-full 
-    max-w-[1240px]
-    px-4 2xl:px-16
+    w-screen 
+    max-w-[1440px]
+    px-8 2xl:px-16
 `;
 
 export const NavLink = tw.a`

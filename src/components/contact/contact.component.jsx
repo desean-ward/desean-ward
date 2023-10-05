@@ -20,6 +20,7 @@ import {
 	BackToTop,
 	Spinner,
 	ButtonWrapper,
+	ContactHeader,
 } from './contact.styles';
 
 import Image from 'next/image';
@@ -290,15 +291,15 @@ const Contact = () => {
 
 	return (
 		<ContactContainer id='contact'>
+		<ContactHeader
+			variants={slideUp}
+			initial='initial'
+			animate='animate'>
+			<p className='section-name'> Contact </p>
+			<h2 className='section-title'> Get In Touch </h2>
+		</ContactHeader>
 			<div>
 				<ContactWrapper>
-					<motion.section
-						variants={slideUp}
-						initial='initial'
-						animate='animate'>
-						<p className='section-name'> Contact </p>
-						<h2 className='section-title'> Get In Touch </h2>
-					</motion.section>
 
 					<ContentWrapper>
 						{/* left side */}

@@ -2,18 +2,17 @@ import tw from "tailwind-styled-components";
 import { motion } from "framer-motion";
 
 export const HomeContainer = tw.div`
-    h-full
+    h-screen
     w-screen
     flex flex-col justify-center items-center
     px-2
-    mt-20
 `;
 
 export const MainWrapper = tw.div`
     w-fit max-w-[1240px] 
     grid content-center-center
     relative
-     
+     mt-80 sm:mt-40 md:mt-0
     `;
 
 export const IntroWrapper = tw.div`

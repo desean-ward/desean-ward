@@ -5,17 +5,21 @@ import { motion } from 'framer-motion';
 import { PulseLoader } from 'react-spinners';
 
 export const ContactContainer = tw.div`
-    w-full
+    max-w-[1240px]
     h-screen 
+    flex flex-col
+    p-4
+`;
+
+export const ContactHeader = tw(motion.header)`
+    mt-20 md:mt-40
 `;
 
 export const ContactWrapper = tw.div`
     w-full
-    max-w-[1000px] 
     m-auto 
     px-2 
     pt-[1em]
-    mt-[5em]
 `;
 
 export const ContentWrapper = tw.div`

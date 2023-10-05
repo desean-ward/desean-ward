@@ -5,17 +5,20 @@ import { css } from "@emotion/react";
 import { motion } from "framer-motion";
 
 export const SkillsContainer = tw.div`
-    w-full
+    max-w-[1240px]
+    flex flex-col 
     relative
-    md:mt-20 
-    p-2 
-    h-screen md:h-full 
+    p-8 
+    h-screen
 `;
 
+export const SkillsHeader = tw(motion.header)`
+    mt-20 md:mt-40
+`;
 export const SkillsContentWrapper = tw(motion.div)`
-    max-w-[1000px] 
+   
     mx-auto
-    flex flex-col justify-center 
+    
 `;
 
 export const SkillsTechWrapper = tw(motion.div)`
