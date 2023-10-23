@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
 				<title>De Sean Ward | Fullstack Software Engineer</title>
 				<meta
 					name='description'
-					content='My Professional Portfolio Website'
+					content='Code, Coffee, & Creativity'
 				/>
 
 				<link rel='manifest' href='/site.webmanifest'></link>
