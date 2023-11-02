@@ -3,10 +3,13 @@ import {
   ExperienceContainer,
   ExperienceContent,
   ExperienceContentWrapper,
+  ResumeButtonWrapper,
 } from "./experience.styles";
 import LiIcon from "./li-icon.component";
 
 import { motion, useScroll } from "framer-motion";
+import Link from "next/link";
+import { BsDownload } from "react-icons/bs";
 
 const Details = ({ position, company, companyLink, time, location, work }) => {
   const ref = useRef(null);
@@ -14,7 +17,7 @@ const Details = ({ position, company, companyLink, time, location, work }) => {
   return (
     <section
       ref={ref}
-      className='my-8 first:mt-0 last:mt-0  mx-auto flex flex-col items-center justify-between'
+      className='flex flex-col items-center justify-between mx-auto my-8 first:mt-0 last:mt-0'
     >
       <div>
         <h3>
@@ -49,8 +52,17 @@ const Experience = () => {
     <ExperienceContainer>
       <ExperienceContentWrapper>
         <ExperienceContent>
-          {/* <p className='section-name'>Experience</p> */}
-          <h2 className='section-title'>Experience</h2>
+          <div className='flex flex-wrap items-center mb-8 md:gap-4'>
+            <h2 className='section-title'>Experience</h2>
+
+            {/* Resume Button */}
+            <ResumeButtonWrapper>
+              <Link href='/files/desean-ward.docx' download target='_blank'>
+                Resume
+                <BsDownload size={20} className='relative inline-block ml-2 ' />
+              </Link>
+            </ResumeButtonWrapper>
+          </div>
 
           <div>
             <ul ref={ref}>
@@ -64,16 +76,16 @@ const Experience = () => {
                 companyLink='https://perscholas.org'
                 time='2023-2023'
                 location='Chicago, IL'
-                work='Accrued 400+ hours of training in Software Engineering. Trained in MERN stack (MongoDB, Express, React, Node.js) and relative software libraries and packages'
+                work='Accrued 400+ hours of training in Software Engineering. Trained in MERN stack (MongoDB, Express, React, Node.js) and relative software libraries and packages.'
               />
 
               <Details
-                position='Graphic Designer'
-                company='Independent Contracts'
+                position='Software Engineer Enthusiast and Self-Educator'
+                company='Independent'
                 companyLink='https://desean-ward.me'
                 time='2019-2023'
                 location='Chicago, IL'
-                work="Created business cards, flyers, and logo for small and private companies. Built a strong customer base while growing personal skill set through online courses, networking events, etc."
+                work='Actively pursued web development, with a primary focus on Full Stack technologies and React. Engaged in networking, workshops, and professional connections to stay updated on web development trends and best practices.'
               />
 
               <Details
