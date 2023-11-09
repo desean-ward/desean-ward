@@ -9,14 +9,11 @@ export const AboutContainer = tw.div`
 `;
 
 export const AboutHeader = tw(motion.header)`
-
    mt-20 md:mt-40
-
 `;
 
 export const AboutContentWrapper = tw.div`
     relative 
-    
     m-auto 
     flex flex-col
     

@@ -3,12 +3,14 @@ import styled from "styled-components";
 
 export const ExperienceContainer = tw.div`
     h-full p-2 
-   md:w-[90vw] lg:w-[65vw]
+    md:w-[90vw] lg:w-[65vw]
+    border-t-2 border-gray-300
+    mt-16
+    pt-8
+
 `;
 
 export const ExperienceContentWrapper = tw.div`
-   
-    
     h-full 
     flex flex-col
     pb-[10em]
@@ -17,8 +19,6 @@ export const ExperienceContentWrapper = tw.div`
 `;
 
 export const ExperienceContent = tw.div`
-    
-
     p {
         py-2
         text-gray-600 

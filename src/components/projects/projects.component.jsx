@@ -10,6 +10,7 @@ import {
 } from './projects.styles';
 
 import dwFazhionz from '../../../public/assets/projects/dw-fazhionz.jpg';
+import luxeLiving from '../../../public/assets/projects/luxe-living.jpg';
 
 import comingsoon from '../../../public/assets/projects/coming-soon.png';
 
@@ -31,7 +32,7 @@ const Projects = () => {
 	};
 
 	return (
-		<ProjectsContainer id='projects' className=' '>
+		<ProjectsContainer id='projects' className=''>
 		<ProjectsHeader
 			variants={slideUp}
 			initial='initial'
@@ -57,6 +58,14 @@ const Projects = () => {
 						title='D.W. Fazhionz!'
 						text='A fashion e-Commerce website built with React and Firebase.'
 						page='/projects/dwfazhionz'
+					/>
+					
+					<ProjectItem
+						ready='true'
+						img={luxeLiving}
+						title='LuxeLiving Estates'
+						text='A real estate website built with the MERN stack.'
+						page='/projects/luxeLiving'
 					/>
 
 					{/**
