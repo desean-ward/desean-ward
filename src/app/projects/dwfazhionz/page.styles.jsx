@@ -38,12 +38,12 @@ export const MainContent = tw.main`
     max-w-[1240px] 
     mx-auto 
     p-2 
-    grid md:grid-cols-5 gap-8 
+    grid md:grid-cols-6 gap-8 
     pt-8 px-4
 `
 
 export const TechContainer = tw.aside`
-    col-span-4 md:col-span-1 
+    col-span-4 md:col-span-2 
     shadow-xl shadow-gray-400 
     rounded-xl 
     p-4
