@@ -24,20 +24,17 @@ Hello, I'm a software engineer, dedicated to showcase my work and seize exciting
 
 ## I can be reached at:
 
-
-<div align="start" style="display: flex; gap: 20px; flex-wrap: wrap;">
-
-  <a href="https://github.com/desean-ward" style="text-decoration: none; color: inherit; display: flex; justify-content: center;  margin: 10px;">
+ <a href="https://github.com/desean-ward" style="text-decoration: none; color: inherit;  margin: 10px;">
     <img src="https://github.com/user-attachments/assets/fe50cf03-84d5-4f15-b9c5-2e3acf5835cf" alt="GitHub" height="40">
     <span>GitHub</span> 
   </a>
 &nbsp; &nbsp; | &nbsp; &nbsp;
-  <a href="https://www.linkedin.com/in/desean-ward/" style="text-decoration: none; color: inherit; display: flex; ustify-content: center; margin: 10px;">
+  <a href="https://www.linkedin.com/in/desean-ward/" style="text-decoration: none; color: inherit; margin: 10px;">
     <img src="https://github.com/user-attachments/assets/68b53837-bfb2-4d14-8068-d5c87a070f4f" alt="LinkedIn" height="40">
     <span>LinkedIn</span>
   </a>
 &nbsp; &nbsp; | &nbsp; &nbsp;
-  <a href="https://www.desean-ward.me/" style="text-decoration: none; color: inherit; display: flex; ustify-content: center; margin: 10px;">
+  <a href="https://www.desean-ward.me/" style="text-decoration: none; color: inherit;  margin: 10px;">
     <img src="https://github.com/user-attachments/assets/d96925bc-3f65-45ea-941d-8307c036b5c0" alt="Website" height="40">
     <span>Website</span>
   </a>
