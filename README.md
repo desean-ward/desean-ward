@@ -19,8 +19,8 @@ Hello, I'm a software engineer, dedicated to showcase my work and seize exciting
 
 ## 🚧 I'm currently working towards:
 * Graduating from Per Scholas with a certificate in Software Engineering
-* Learning more about technologies such as AI and Blockchain
-* Furthering my knowledge and speaking of the Spanish Language
+* Learning more about cloud technologies
+* Furthering my knowledge Three.js, GSAP, and Framer Motion
 
 ## I can be reached at:
 
