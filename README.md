@@ -8,7 +8,7 @@ Hello, I'm a software engineer, dedicated to showcase my work and seize exciting
 
 
 ## My Tech Stack: 
-<img src='https://github.com/desean-ward/desean-ward/assets/66344466/27aa8602-ab77-4a4b-8ac8-130ca20a9b5d' height='40' alt='React' />  REACT  /  <img src='https://github.com/desean-ward/desean-ward/assets/66344466/b9c84479-0fe6-40bd-8108-5b16f087bb5a' height='40' alt='NextJS' />  NextJS  /  <img src='https://github.com/desean-ward/desean-ward/assets/66344466/b29bd020-5ad1-4c0f-98f6-5885014e8a62' height='40' alt='JavaScript' /> JavaScript   /  <img src='https://github.com/desean-ward/desean-ward/assets/66344466/dd237c95-1cc5-4c0f-a50c-18e00ade3a07' height='40' alt='HTML5' /> HTML5  /  <img src='https://github.com/desean-ward/desean-ward/assets/66344466/8c20c21e-ef68-44e9-9472-047cf6705032' height='40' alt='SCSS' /> SASS/SCSS  /   <img src='https://github.com/desean-ward/desean-ward/assets/66344466/1591950f-907c-4965-b274-56ca3bb56c03' height='40' alt='Tailwind CSS' /> Tailwind CSS  /  <img src='https://github.com/desean-ward/desean-ward/assets/66344466/8233b5cb-8f08-4cf4-9af6-2933749c7fcb' height='40' alt='Styled Components' /> Styled Components 
+<img src='https://github.com/desean-ward/desean-ward/assets/66344466/27aa8602-ab77-4a4b-8ac8-130ca20a9b5d' height='40' alt='React' />  REACT  &nbsp; &nbsp; | &nbsp; &nbsp;  <img src='https://github.com/desean-ward/desean-ward/assets/66344466/b9c84479-0fe6-40bd-8108-5b16f087bb5a' height='40' alt='NextJS' />  NextJS  &nbsp; &nbsp; | &nbsp; &nbsp;  <img src='https://github.com/desean-ward/desean-ward/assets/66344466/b29bd020-5ad1-4c0f-98f6-5885014e8a62' height='40' alt='JavaScript' /> JavaScript  &nbsp; &nbsp; | &nbsp; &nbsp; <img src='https://github.com/desean-ward/desean-ward/assets/66344466/dd237c95-1cc5-4c0f-a50c-18e00ade3a07' height='40' alt='HTML5' /> HTML5  /&nbsp; &nbsp; | &nbsp; &nbsp;  <img src='https://github.com/desean-ward/desean-ward/assets/66344466/8c20c21e-ef68-44e9-9472-047cf6705032' height='40' alt='SCSS' /> SASS/SCSS &nbsp; &nbsp; | &nbsp; &nbsp;>  <img src='https://github.com/desean-ward/desean-ward/assets/66344466/1591950f-907c-4965-b274-56ca3bb56c03' height='40' alt='Tailwind CSS' /> Tailwind CSS  <br />  <img src='https://github.com/desean-ward/desean-ward/assets/66344466/8233b5cb-8f08-4cf4-9af6-2933749c7fcb' height='40' alt='Styled Components' /> Styled Components 
 
 ## ❗ Facts about me:
 * I love technology, art, and music in all forms
@@ -25,19 +25,19 @@ Hello, I'm a software engineer, dedicated to showcase my work and seize exciting
 ## I can be reached at:
 
 
-<div style="display: flex; justify-content: center; align-items: center;">
+<div align="start" style="display: flex; gap: 20px; flex-wrap: wrap;">
 
-  <a href="https://github.com/desean-ward" style="text-decoration: none; color: inherit; text-align: center; display: flex; flex-direction: column; align-items: center; margin: 0 20px;">
+  <a href="https://github.com/desean-ward" style="text-decoration: none; color: inherit; display: flex; justify-content: center;  margin: 10px;">
     <img src="https://github.com/user-attachments/assets/fe50cf03-84d5-4f15-b9c5-2e3acf5835cf" alt="GitHub" height="40">
-    <span>GitHub</span>
+    <span>GitHub</span> 
   </a>
-&nbsp; &nbsp;
-  <a href="https://www.linkedin.com/in/desean-ward/" style="text-decoration: none; color: inherit; text-align: center; display: flex; flex-direction: column; align-items: center; margin: 0 20px;">
+&nbsp; &nbsp; | &nbsp; &nbsp;
+  <a href="https://www.linkedin.com/in/desean-ward/" style="text-decoration: none; color: inherit; display: flex; ustify-content: center; margin: 10px;">
     <img src="https://github.com/user-attachments/assets/68b53837-bfb2-4d14-8068-d5c87a070f4f" alt="LinkedIn" height="40">
     <span>LinkedIn</span>
   </a>
-&nbsp; &nbsp;
-  <a href="https://www.desean-ward.me/" style="text-decoration: none; color: inherit; text-align: center; display: flex; flex-direction: column; align-items: center; margin: 0 20px;">
+&nbsp; &nbsp; | &nbsp; &nbsp;
+  <a href="https://www.desean-ward.me/" style="text-decoration: none; color: inherit; display: flex; ustify-content: center; margin: 10px;">
     <img src="https://github.com/user-attachments/assets/d96925bc-3f65-45ea-941d-8307c036b5c0" alt="Website" height="40">
     <span>Website</span>
   </a>
