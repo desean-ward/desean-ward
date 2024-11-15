@@ -24,8 +24,28 @@ Hello, I'm a software engineer, dedicated to showcase my work and seize exciting
 
 ## I can be reached at:
 
-[<img src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/github.svg" alt="GitHub" height="40">](https://github.com/desean-ward)
-[<img src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/linkedin.svg" alt="LinkedIn" height="40">](https://www.linkedin.com/in/desean-ward/)
-[<img src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/icloud.svg" alt="Website" height="40">](https://www.desean-ward.me/)
+
+<div style="display: flex; justify-content: center; align-items: center;">
+
+  <a href="https://github.com/desean-ward" style="text-decoration: none; color: inherit; text-align: center; display: flex; flex-direction: column; align-items: center; margin: 0 20px;">
+    <img src="https://github.com/user-attachments/assets/fe50cf03-84d5-4f15-b9c5-2e3acf5835cf" alt="GitHub" height="40">
+    <span>GitHub</span>
+  </a>
+&nbsp; &nbsp;
+  <a href="https://www.linkedin.com/in/desean-ward/" style="text-decoration: none; color: inherit; text-align: center; display: flex; flex-direction: column; align-items: center; margin: 0 20px;">
+    <img src="https://github.com/user-attachments/assets/68b53837-bfb2-4d14-8068-d5c87a070f4f" alt="LinkedIn" height="40">
+    <span>LinkedIn</span>
+  </a>
+&nbsp; &nbsp;
+  <a href="https://www.desean-ward.me/" style="text-decoration: none; color: inherit; text-align: center; display: flex; flex-direction: column; align-items: center; margin: 0 20px;">
+    <img src="https://github.com/user-attachments/assets/d96925bc-3f65-45ea-941d-8307c036b5c0" alt="Website" height="40">
+    <span>Website</span>
+  </a>
+
+</div>
+
+
+
+
 
 
